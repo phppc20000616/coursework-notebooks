@@ -1,0 +1,62 @@
+---
+title: "quiz6"
+author: "Tianyue Guo"
+date: "2024-11-27"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+# Load necessary library
+library(Rcpp)
+
+# Source the C++ function
+sourceCpp("mySweep_cpp.cpp")
+
+# Define the R version of the sweep function
+mySweep <- function(A, m) {
+  n <- dim(A)[1]
+  for (k in 1:m) {
+    for (i in 1:n)
+      for (j in 1:n)
+        if (i != k & j != k)
+          A[i, j] <- A[i, j] - A[i, k] * A[k, j] / A[k, k]
+    for (i in 1:n)
+      if (i != k)
+        A[i, k] <- A[i, k] / A[k, k]
+    for (j in 1:n)
+      if (j != k)
+        A[k, j] <- A[k, j] / A[k, k]
+    A[k, k] <- -1 / A[k, k]
+  }
+  return(A)
+}
+
+# Generate data
+set.seed(123)
+X <- rnorm(250000)
+dim(X) <- c(500, 500)
+A <- t(X) %*% X
+
+# Test and time mySweep.R
+start_time_r <- Sys.time()
+result_r <- mySweep(A, ncol(X))
+end_time_r <- Sys.time()
+
+time_r <- end_time_r - start_time_r
+
+# Test and time mySweep_cpp
+start_time_cpp <- Sys.time()
+result_cpp <- mySweep_cpp(A, ncol(X))
+end_time_cpp <- Sys.time()
+
+time_cpp <- end_time_cpp - start_time_cpp
+
+# Report results
+cat("Elapsed time for mySweep.R:", time_r, "\n")
+cat("Elapsed time for mySweep_cpp:", time_cpp, "\n")
+
+```

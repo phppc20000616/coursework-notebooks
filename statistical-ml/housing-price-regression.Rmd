@@ -1,0 +1,178 @@
+---
+title: "hw2"
+author: "Tianyue Guo"
+date: "2024-10-21"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Refer to some ways of language grammar in ChatGpt.
+
+## Step 1: Reading and Cleaning the Data
+
+
+
+```{r}
+
+# Load necessary libraries
+library(tidyverse)
+
+
+# Read the data without interpreting any column as row names
+data <- read.table("LAhousingpricesaug2013.txt", header = TRUE, na.strings = "n/a")
+
+# Select relevant columns and clean data
+data_cleaned <- data %>%
+  select(SalesofSingleFamilyHomes, 
+         PriceMedianSFR.1000., 
+         PriceMedianCondos.1000., 
+         MedianHomePrice.Sq.Ft) %>%
+  drop_na()
+
+# Extract Y and X variables
+Y <- data_cleaned$SalesofSingleFamilyHomes
+X1 <- data_cleaned$PriceMedianSFR.1000.
+X2 <- data_cleaned$PriceMedianCondos.1000.
+X3 <- data_cleaned$MedianHomePrice.Sq.Ft
+
+# Create the design matrix X (with intercept)
+X <- cbind(1, X1, X2, X3)
+
+cat("Cleaned data has", nrow(data_cleaned), "observations.\n")
+print(X)
+```
+
+## Step 2: 1）Linear Regression with Gauss-Jordan Elimination
+
+```{r}
+gauss_jordan <- function(X, Y) {
+  # Create the augmented matrix [X'X | X'Y]
+  XtX <- t(X) %*% X
+  XtY <- t(X) %*% Y
+  A <- cbind(XtX, XtY)  # Augmented matrix
+  
+  n <- nrow(A)  # Number of rows
+  
+  # Perform Gauss-Jordan elimination with pivoting
+  for (i in seq_len(n)) {
+    # Pivot step: Find the row with the largest value in the current column
+    pivot_row <- which.max(abs(A[i:n, i])) + (i - 1)
+    A[c(i, pivot_row), ] <- A[c(pivot_row, i), ]  # Swap rows
+
+    # Normalize the pivot row
+    A[i, ] <- A[i, ] / A[i, i]
+
+    # Eliminate other rows
+    for (j in seq_len(n)) {
+      if (i != j) {
+        A[j, ] <- A[j, ] - A[j, i] * A[i, ]
+      }
+    }
+  }
+
+  # Extract the solution (β coefficients)
+  beta <- A[, ncol(A)]
+  return(beta)
+}
+
+# Compute β coefficients using Gauss-Jordan elimination
+beta_gj <- gauss_jordan(X, Y)
+cat("Estimated β using Gauss-Jordan Elimination:", beta_gj, "\n")
+```
+
+## 2) Using sweep operator
+
+```{r}
+sweep_operator <- function(X, Y) {
+  # Create the augmented matrix [X'X | X'Y]
+  XtX <- t(X) %*% X
+  XtY <- t(X) %*% Y
+  A <- cbind(XtX, XtY)  # Augmented matrix
+
+  n <- ncol(X)  # Number of predictors including intercept
+
+  # Apply the sweep operator
+  for (k in seq_len(n)) {
+    A[k, ] <- A[k, ] / A[k, k]
+    for (i in seq_len(n)) {
+      if (i != k) {
+        A[i, ] <- A[i, ] - A[i, k] * A[k, ]
+      }
+    }
+  }
+
+  # Extract the solution (β coefficients)
+  beta <- A[, ncol(A)]
+  return(beta)
+}
+
+# Compute β coefficients using the Sweep Operator
+beta_sweep <- sweep_operator(X, Y)
+cat("Estimated β using Sweep Operator:", beta_sweep, "\n")
+
+```
+
+## Step 3 & 4: Leave-One-Out Regression
+
+```{r}
+# Initialize matrix to store β^(−i) for each iteration
+beta_minus_i <- matrix(NA, nrow = nrow(X), ncol = ncol(X))
+
+# Perform leave-one-out regression for each row
+for (i in seq_len(nrow(X))) {
+  # Remove the i-th observation
+  X_minus_i <- X[-i, ]
+  Y_minus_i <- Y[-i]
+
+  # Compute β^(−i) using Gauss-Jordan Elimination
+  beta_i <- tryCatch({
+    gauss_jordan(X_minus_i, Y_minus_i)
+  }, error = function(e) {
+    cat("Error for observation", i, ":", e$message, "\n")
+    rep(NA, ncol(X))  # Return NA if an error occurs
+  })
+
+  # Store the result in the matrix
+  beta_minus_i[i, ] <- beta_i
+}
+
+# Print the β^(−i) matrix
+cat("Leave-One-Out β coefficients:\n")
+print(beta_minus_i)
+
+```
+
+## Step 5: Plot the Influence of Each Observation
+
+```{r}
+# Load the ggplot2 library
+library(ggplot2)
+
+# Create a data frame for plotting
+influence_data <- data.frame(
+  Observation = 1:nrow(beta_minus_i),
+  Beta_1 = beta_minus_i[, 2]  # Extract the β1^(−i) values
+)
+
+# Generate the plot using ggplot2
+ggplot(influence_data, aes(x = Observation, y = Beta_1)) +
+  geom_line(color = "blue") +
+  geom_point(color = "red", size = 2) +
+  labs(
+    title = expression("Influence of Each Observation on " ~ hat(beta)[1]),
+    x = "Observation Index (i)",
+    y = expression(hat(beta)[1]^{(-i)})
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(hjust = 0.5, size = 14),
+    axis.title.x = element_text(size = 12),
+    axis.title.y = element_text(size = 12)
+  )
+
+```
+
+The plot shows that $\beta_{1}^{(-i)}$ is relatively stable across most observations, except for several observations, where we observe some extremely high or low values, close to 0.0067 and 0.01. This indicates that these observations have a moderate influence on the model.

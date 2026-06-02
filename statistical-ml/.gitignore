@@ -1,0 +1,52 @@
+# Other students' files (Jiani Jin, Kang Yuan)
+406hw*.Rmd
+406hw*.R
+406hw*.ipynb
+hw6jjn.ipynb
+Project*.Rmd
+Project*.html
+Project_Final.Rmd
+Projectky*
+
+# Course-provided PDFs and materials
+*.pdf
+*.PDF
+*.pptx
+*.docx
+*.doc
+
+# Archives
+*.zip
+
+# Quiz photos (not code)
+quiz5.jpg
+quiz7.jpg
+
+# LaTeX build artifacts
+hw1gty.log
+hw1gty.tex
+hw1gty_files/
+
+# Rendered HTML outputs
+*.html
+
+# Lecture materials
+Lec*/
+"Lec 13"/
+
+# macOS
+.DS_Store
+Thumbs.db
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# R artifacts
+.Rhistory
+.RData
+
+# Unneeded course files
+exercise.R
+Notes_Rmarkdown.Rmd

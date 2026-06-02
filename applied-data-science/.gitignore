@@ -1,0 +1,28 @@
+# Large datasets (excluded due to GitHub size limits)
+*.csv.gz
+cook_county_*.csv
+hwk/Final/data/
+hwk/hwk/HW3/data/
+
+# macOS
+.DS_Store
+**/.DS_Store
+Thumbs.db
+
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.ipynb_checkpoints/
+**/.ipynb_checkpoints/
+
+# Archives
+*.zip
+
+# PDFs and course materials
+*.pdf
+*.PDF
+*.pptx
+
+# Other students' files
+cxy.ipynb

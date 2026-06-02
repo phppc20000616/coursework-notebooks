@@ -1,0 +1,273 @@
+---
+title: "hw5gty"
+author: "Tianyue Guo"
+date: "2024-11-27"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Refer to some ways of language grammar in ChatGpt.
+
+
+## Q1
+
+```{r}
+library(data.table) # for fread
+
+# Load digits.csv
+digits_path <- "digits.csv"
+
+# Function to load and preprocess digits data
+load_digits <- function(subset=NULL, normalize=TRUE) {
+  df <- fread(digits_path)
+  df <- as.matrix(df)
+
+  # Only keep the numbers we want
+  if (length(subset) > 0) {
+    c <- dim(df)[2]
+    l_col <- df[, c]
+    index = NULL
+
+    for (i in 1:length(subset)) {
+      number = subset[i]
+      index = c(index, which(l_col == number))
+    }
+    index <- sort(index)
+    df <- df[index, ]
+  }
+
+  # Convert to arrays
+  digits <- df[, -1]
+  labels <- df[, c]
+
+  # Normalize digit values to 0 and 1
+  if (normalize == TRUE) {
+    digits <- digits - min(digits)
+    digits <- digits / max(digits)
+  }
+
+  # Change the labels to 0 and 1
+  for (i in 1:length(subset)) {
+    labels[labels == subset[i]] <- i - 1
+  }
+
+  return(list(digits = digits, labels = labels))
+}
+
+# Function to split data into training and testing sets
+split_samples <- function(digits, labels) {
+  num_samples <- dim(digits)[1]
+  num_training <- round(num_samples * 0.7)
+  indices <- sample(1:num_samples, size = num_samples)
+  training_idx <- indices[1:num_training]
+  testing_idx <- indices[-(1:num_training)]
+
+  return(list(
+    training_digits = digits[training_idx, ],
+    training_labels = labels[training_idx],
+    testing_digits = digits[testing_idx, ],
+    testing_labels = labels[testing_idx]
+  ))
+}
+
+# Linear SVM implementation
+train_svm <- function(training_digits, training_labels, C) {
+  n <- nrow(training_digits)
+  p <- ncol(training_digits)
+
+  # Initialize weights and bias
+  weights <- rep(0, p)
+  bias <- 0
+
+  # Learning rate
+  eta <- 0.01
+
+  # Number of iterations
+  max_iter <- 1000
+
+  for (iter in 1:max_iter) {
+    for (i in 1:n) {
+      xi <- training_digits[i, ]
+      yi <- ifelse(training_labels[i] == 1, 1, -1)
+
+      # Check the condition for misclassification
+      if (yi * (sum(weights * xi) + bias) < 1) {
+        weights <- weights + eta * (yi * xi - 2 * C * weights)
+        bias <- bias + eta * yi
+      } else {
+        weights <- weights - eta * 2 * C * weights
+      }
+    }
+  }
+
+  return(list(weights = weights, bias = bias))
+}
+
+# Prediction function for SVM
+predict_svm <- function(digits, model) {
+  weights <- model$weights
+  bias <- model$bias
+
+  predictions <- as.numeric(digits %*% weights + bias > 0)
+  return(predictions)
+}
+
+# Accuracy function
+calculate_accuracy <- function(predictions, labels) {
+  return(mean(predictions == labels))
+}
+
+# Main program
+set.seed(42)
+result <- load_digits(subset = c(1, 7), normalize = TRUE)
+digits <- result$digits
+labels <- result$labels
+
+split_result <- split_samples(digits, labels)
+training_digits <- split_result$training_digits
+training_labels <- split_result$training_labels
+testing_digits <- split_result$testing_digits
+testing_labels <- split_result$testing_labels
+
+# Train linear SVM with C = 1
+C <- 1
+svm_model <- train_svm(training_digits, training_labels, C)
+
+# Predict on training and testing data
+train_predictions <- predict_svm(training_digits, svm_model)
+test_predictions <- predict_svm(testing_digits, svm_model)
+
+# Calculate accuracy
+train_accuracy <- calculate_accuracy(train_predictions, training_labels)
+test_accuracy <- calculate_accuracy(test_predictions, testing_labels)
+
+# Print results
+cat("Training Accuracy:", train_accuracy, "\n")
+cat("Testing Accuracy:", test_accuracy, "\n")
+
+```
+
+
+I find that the SVM model achieve high accuracy on both the training set and the test set, which are very close to each other. I think this means that the model has good learning ability and the data sample data may be linearly separable.
+
+
+## Q2
+
+(a)
+
+To dive into linearly non-separable data set, I introduced kernel to the SVM model and first choose different C to control slackness.
+
+```{r}
+
+
+# Kernel SVM implementation
+train_kernel_svm <- function(training_digits, training_labels, kernel_func, C) {
+  n <- nrow(training_digits)
+
+  # Initialize alphas and bias
+  alphas <- rep(0, n)
+  bias <- 0
+
+  # Precompute the kernel matrix
+  kernel_matrix <- matrix(0, n, n)
+  for (i in 1:n) {
+    for (j in 1:n) {
+      kernel_matrix[i, j] <- kernel_func(training_digits[i, ], training_digits[j, ])
+    }
+  }
+
+  # Learning rate
+  eta <- 0.01
+
+  # Number of iterations
+  max_iter <- 1000
+
+  for (iter in 1:max_iter) {
+    for (i in 1:n) {
+      yi <- ifelse(training_labels[i] == 1, 1, -1)
+      prediction <- sum(alphas * training_labels * kernel_matrix[, i]) + bias
+
+      # Update alphas and bias
+      if (yi * prediction < 1) {
+        alphas[i] <- alphas[i] + eta * (1 - yi * prediction)
+        bias <- bias + eta * yi
+      }
+    }
+  }
+
+  return(list(alphas = alphas, bias = bias, kernel_func = kernel_func, training_digits = training_digits, training_labels = training_labels))
+}
+
+# Prediction function for Kernel SVM
+predict_kernel_svm <- function(digits, model) {
+  alphas <- model$alphas
+  bias <- model$bias
+  kernel_func <- model$kernel_func
+  training_digits <- model$training_digits
+  training_labels <- model$training_labels
+
+  n <- nrow(digits)
+  predictions <- rep(0, n)
+
+  for (i in 1:n) {
+    prediction <- sum(alphas * training_labels * sapply(1:length(alphas), function(j) kernel_func(digits[i, ], training_digits[j, ]))) + bias
+    predictions[i] <- ifelse(prediction > 0, 1, 0)
+  }
+
+  return(predictions)
+}
+
+# Main program for Task 2
+set.seed(42)
+result <- load_digits(subset = c(1, 7), normalize = TRUE)
+digits <- result$digits
+labels <- result$labels
+
+split_result <- split_samples(digits, labels)
+training_digits <- split_result$training_digits
+training_labels <- split_result$training_labels
+testing_digits <- split_result$testing_digits
+testing_labels <- split_result$testing_labels
+
+# Experiment with different C values
+C_values <- c(0.1, 1, 10)
+for (C in C_values) {
+  svm_model <- train_svm(training_digits, training_labels, C)
+  train_predictions <- predict_svm(training_digits, svm_model)
+  test_predictions <- predict_svm(testing_digits, svm_model)
+
+  train_accuracy <- calculate_accuracy(train_predictions, training_labels)
+  test_accuracy <- calculate_accuracy(test_predictions, testing_labels)
+
+  cat("C =", C, "Training Accuracy:", train_accuracy, "Testing Accuracy:", test_accuracy, "\n")
+}
+```
+From the results, I find that higher C values may increase margin but introduce more errors. Lower C values can reduce errors, taking smaller margin as a cost.
+
+(b)
+
+Then I try kernel SVM with polynomial kernel.
+
+```{r}
+# Define a custom kernel (e.g., polynomial kernel)
+polynomial_kernel <- function(x, y, degree = 2) {
+  return((sum(x * y) + 1)^degree)
+}
+
+# Train and evaluate Kernel SVM
+kernel_model <- train_kernel_svm(training_digits, training_labels, polynomial_kernel, C = 1)
+kernel_train_predictions <- predict_kernel_svm(training_digits, kernel_model)
+kernel_test_predictions <- predict_kernel_svm(testing_digits, kernel_model)
+
+kernel_train_accuracy <- calculate_accuracy(kernel_train_predictions, training_labels)
+kernel_test_accuracy <- calculate_accuracy(kernel_test_predictions, testing_labels)
+
+cat("Kernel SVM Training Accuracy:", kernel_train_accuracy, "\n")
+cat("Kernel SVM Testing Accuracy:", kernel_test_accuracy, "\n")
+
+```
+
+The Polynomial kernel SVM doesn't have a very high accuracy since the training and testing one are not very close to each other. Therefore, the origin SVM is a better choice.  

@@ -1,0 +1,257 @@
+---
+title: "hw1"
+output:
+  html_document:
+    df_print: paged
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+library(dplyr)
+```
+
+Refer to some ways of language grammar in ChatGpt.
+
+## Question 1: Linear Algebra Review
+
+Let \( f(x) = \frac{1}{2}x^T A x + b^T x \), where \( A \in \mathbb{R}^{n \times n} \) is symmetric, and \( b \in \mathbb{R}^n \).
+
+### Part (a)
+The function \( f(x) \) is a quadratic form, and we need to find its gradient \(\nabla_x f(x)\) and Hessian \(\nabla^2 f(x)\).
+
+- **Gradient**: The gradient of a function \( f(x) \) with respect to \( x \) is the vector of partial derivatives:
+  \[
+  \nabla_x f(x) = \begin{bmatrix}
+  \frac{\partial f(x)}{\partial x_1} \\
+  \vdots \\
+  \frac{\partial f(x)}{\partial x_n}
+  \end{bmatrix}
+  \]
+
+  For \( f(x) = \frac{1}{2}x^T A x + b^T x \), the gradient is computed as:
+  \[
+  \nabla_x f(x) = A x + b
+  \]
+  Here, the term \(\frac{1}{2}x^T A x\) differentiates to \( A x \) since \( A \) is symmetric, and \( b^T x \) differentiates to \( b \).
+
+- **Hessian**: The Hessian is the matrix of second partial derivatives:
+  \[
+  \nabla^2 f(x) = \begin{bmatrix}
+  \frac{\partial^2 f(x)}{\partial x_1^2} & \cdots & \frac{\partial^2 f(x)}{\partial x_1 \partial x_n} \\
+  \vdots & \ddots & \vdots \\
+  \frac{\partial^2 f(x)}{\partial x_n \partial x_1} & \cdots & \frac{\partial^2 f(x)}{\partial x_n^2}
+  \end{bmatrix}
+  \]
+
+  For this quadratic function, the Hessian is simply:
+  \[
+  \nabla^2 f(x) = A
+  \]
+
+### Part (b)
+Let \( f(x) = g(h(x)) \), where \( g: \mathbb{R} \to \mathbb{R} \) and \( h: \mathbb{R}^n \to \mathbb{R} \) are differentiable.
+
+- By the chain rule for gradients, we can find \(\nabla_x f(x)\):
+  \[
+  \nabla_x f(x) = g'(h(x)) \nabla_x h(x)
+  \]
+  
+  Here, \( g'(h(x)) \) represents the derivative of \( g \) evaluated at \( h(x) \), and \(\nabla_x h(x)\) is the gradient of \( h \) with respect to \( x \).
+
+### Part (c)
+Let \( f(x) = g(a^T x) \), where \( a \in \mathbb{R}^n \).
+
+- **Gradient**: To find \(\nabla_x f(x)\), we use the chain rule again:
+  \[
+  \nabla_x f(x) = g'(a^T x) \nabla_x (a^T x)
+  \]
+
+  Since \( a^T x \) is a linear function, its gradient with respect to \( x \) is \( a \). Thus, we get:
+  \[
+  \nabla_x f(x) = g'(a^T x) a
+  \]
+
+- **Hessian**: The Hessian involves differentiating again:
+  \[
+  \nabla^2 f(x) = \nabla_x \left( g'(a^T x) a \right)
+  \]
+
+  Since \( g'(a^T x) \) is a scalar function of \( a^T x \), its gradient is \( g''(a^T x) a \), leading to:
+  \[
+  \nabla^2 f(x) = g''(a^T x) a a^T
+  \]
+
+  This result is a rank-1 matrix formed by \( a a^T \) scaled by \( g''(a^T x) \).
+
+## Question 2:
+a.
+```{r}
+find_90th <- function(x) {
+  sorted_x <- sort(x)
+  return(sorted_x[90])
+}
+```
+
+b.
+```{r}
+find_91st <- function(x) {
+  sorted_x <- sort(x)
+  return(sorted_x[91])
+}
+```
+
+c.
+```{r}
+find_average <- function(x) {
+  return((find_90th(x) + find_91st(x)) / 2)
+}
+```
+
+d.
+```{r}
+# Set seed for reproducibility
+set.seed(123)
+
+# Store the number of iterations
+n_iterations <- 10000
+
+# Vectors to store the estimates
+estimates_90th <- numeric(n_iterations)
+estimates_91st <- numeric(n_iterations)
+estimates_avg <- numeric(n_iterations)
+estimates_quantile <- numeric(n_iterations)
+
+# Loop to generate estimates
+for (i in 1:n_iterations) {
+  sample_data <- runif(100) # Generate 100 uniform(0,1) random variables
+  estimates_90th[i] <- find_90th(sample_data)
+  estimates_91st[i] <- find_91st(sample_data)
+  estimates_avg[i] <- find_average(sample_data)
+  estimates_quantile[i] <- quantile(sample_data, 0.9)
+}
+
+# Calculate the cumulative means for plotting
+mean_90th <- cumsum(estimates_90th) / (1:n_iterations)
+mean_91st <- cumsum(estimates_91st) / (1:n_iterations)
+mean_avg <- cumsum(estimates_avg) / (1:n_iterations)
+mean_quantile <- cumsum(estimates_quantile) / (1:n_iterations)
+
+# Create a sequence of x values with the same length as the estimates
+x_values <- 1:n_iterations
+
+# Plotting the sample means as a function of m
+plot(x_values, mean_90th, type = "l", col = "red", ylim = c(0.88, 0.92),
+     xlab = "Number of Samples (m)", ylab = "Sample Mean Estimate", 
+     main = "Convergence of 90th Percentile Estimates")
+lines(x_values, mean_91st, col = "blue")
+lines(x_values, mean_avg, col = "green")
+lines(x_values, mean_quantile, col = "purple")
+legend("topright", legend = c("90th Value", "91st Value", "Average", "Quantile Function"),
+       col = c("red", "blue", "green", "purple"), lty = 1)
+```
+
+e.
+```{r}
+cat("Sample Mean of 90th value estimate:", mean_90th[10000], "\n")
+cat("Sample Mean of 91st value estimate:", mean_91st[10000], "\n")
+cat("Sample Mean of average estimate:", mean_avg[10000], "\n")
+cat("Sample Mean of quantile() estimate:", mean_quantile[10000], "\n")
+```
+Typically, I think the quantile() function is expected to provide the most accurate result due to R's more complex interpolation method.
+
+## Question 3:
+
+a.
+```{r}
+pi2 <- function(n) {
+  sqrt(6 * sum(1 / (1:n)^2))
+}
+
+# Evaluate for 10^j where j = 0, 1, ..., 6
+sapply(0:6, function(j) pi2(10^j))
+
+```
+
+b.
+```{r}
+pi3 <- function(n) {
+  points <- matrix(runif(2 * n, -1, 1), ncol = 2)
+  inside_circle <- sum(rowSums(points^2) <= 1)
+  return((inside_circle / n) * 4)
+}
+
+# Evaluate for 10^j where j = 0, 1, ..., 4
+sapply(0:4, function(j) pi3(10^j))
+
+set.seed(123)
+n <- 10000
+points <- matrix(runif(2 * n, -1, 1), ncol = 2)
+inside_circle <- rowSums(points^2) <= 1
+
+plot(points[inside_circle, ], col = "blue", pch = 16, xlim = c(-1, 1), ylim = c(-1, 1),
+     xlab = "x", ylab = "y", main = "Monte Carlo Simulation for π")
+points(points[!inside_circle, ], col = "red", pch = 16)
+
+```
+
+
+## Question 4: 
+
+The code below reads in data about [books sold on Amazon](https://dasl.datadescription.com/datafile/amazon-books/).  
+- Note that the height (`Height`), width (`Width`), and thickness (`Thick`) of books in this data frame are measured in inches.
+
+```{r}
+library(tidyverse) # Load the tidyverse package so it is available to use 
+books <- read.csv("amazonbooks.csv")
+```
+
+### (a) What is the name of the book(s) with the smallest number of pages in this sample of books, and how many pages does it have?
+```{r}
+# Type your code here 
+# Find the minimum number of pages in the dataset
+min_pages <- min(books$NumPages, na.rm = TRUE)
+
+# Filter the books that have the minimum number of pages
+smallest_books <- books %>% filter(NumPages == min_pages)
+
+# Display the name(s) of the book(s) with the smallest number of pages and the number of pages
+smallest_books %>% select(Title, NumPages)
+
+
+
+
+```
+
+### (b) Create a summary table which reports the total number of books written by each author and the mean and variance of the number of pages per book for each author, for the books represented in this sample of books. 
+
+```{r}
+# Type your code here 
+# Create a summary table for each author
+summary_table <- books %>%
+  group_by(Author) %>%
+  summarise(
+    total_books = n(),  # Total number of books by each author
+    mean_pages = mean(NumPages, na.rm = TRUE),  # Mean number of pages
+    var_pages = var(NumPages, na.rm = TRUE)  # Variance of number of pages
+  )
+
+# Display the summary table
+print(summary_table)
+
+```
+
+### (c) Construct a figure with the data using ggplot2(), and please name your figure properly for the audience.
+```{r}
+# Type your code here 
+# Construct a scatter plot of Number of Pages vs. Amazon Price
+ggplot(books, aes(x = NumPages, y = Amazon.Price)) +
+  geom_point(alpha = 0.6, color = "blue") +
+  labs(
+    title = "Relationship Between Number of Pages and Amazon Price of Books",
+    x = "Number of Pages",
+    y = "Amazon Price (USD)"
+  ) +
+  theme_minimal()
+```

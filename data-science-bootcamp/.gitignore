@@ -1,0 +1,25 @@
+# Large datasets
+job_postings.csv
+
+# macOS
+.DS_Store
+**/.DS_Store
+Thumbs.db
+
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.ipynb_checkpoints/
+**/.ipynb_checkpoints/
+
+# Archives & course materials
+*.zip
+*.pdf
+*.PDF
+*.pptx
+*.docx
+
+# Course admin files
+附件*/
+郭天悦*
