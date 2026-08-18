@@ -1,0 +1,335 @@
+ID	KPI No	Scope in 8.31	KPI Name CN	KPI Name ENG	Business Desc	Calculation Formula	Category	Subcategory	KPI Type	Business Team	Business Owner	KPI Unit	KPI Accuracy	Refresh Frequency	Business Rule	Numerator	Denumerator	Criticality	Universe KPI Flag	which brands apply	Dimension	Backend Table	Backend Column	Scope	Reviewed Team	Reviewed DT	Version	KPI Status	Comments
+00001	KPI-Engagement-00001	N	拜访计划达成率	Call Plan Achievement% 	计划周期内执行的拜访占计划拜访的百分比	拜访计划达成率=实际拜访数/ 计划拜访数	Engagement	拜访	计算指标			%	0.01		拜访状态是“已提交”才能被统计	实际拜访数	计划拜访数	中						CFCD	CFC-Harry	2026/6/2		Active	
+00002	KPI-Engagement-00002	N	DT 计划拜访数	DT Plan Call#	计划周期内DT 计划拜访次数	对DT计划拜访次数求和	Engagement	拜访	基础指标			次数	1		拜访状态是“已提交”才能被统计	N/A	N/A	中						Smart	TA-Bryan	2026/6/25		Active	
+00003	KPI-Engagement-00003	N	MCCP计划拜访数	MCCP Plan Call#	计划周期内MCCP 计划拜访次数	对MCCP计划拜访次数求和	Engagement	拜访	基础指标			次数	1		拜访状态是“已提交”才能被统计	N/A	N/A	中						Smart	TA-Bryan	2026/6/25		Active	
+00004	KPI-Engagement-00004	N	拜访计划调整率	Call Plan ADJ%	统计DT 计划拜访数和MCCP计划拜访数的差异占DT 计划拜访数的比例	拜访计划调整率=（ABS（DT计划拜访数-MCCP计划拜访数）/DT计划拜访数)*100%	Engagement	拜访	计算指标			%	0.01		拜访状态是“已提交”才能被统计	ABS（DT计划拜访数-MCCP计划拜访数）	DT计划拜访数	中						Smart	TA-Bryan	2026/6/25		Active	
+00005	KPI-Engagement-00005	N	目标医生调整率	Target HCP ADJ%	与DT原始数据对比，对拜访次数做出过调整的目标医生个数和DT原始医生的总个数的比例	目标医生调整率=对拜访次数做出过调整的目标医生个数/DT原始医生的总个数*100%	Engagement	拜访	计算指标			%	0.01		拜访状态是“已提交”才能被统计	对拜访次数做出过调整的目标医生个数	DT原始医生的总个数	中						Smart	TA-Bryan	2026/6/25		Active	
+00006	KPI-Engagement-00006	N	DT拜访计划达成率	DT Call Plan Achievement% 	计划周期内执行的拜访占计划拜访的百分比,如果计划周期内执行的拜访超出了计划拜访的次数，那么就按照计划拜访次数进行统计	DT拜访计划达成率=DT拜访数/ 计划拜访数	Engagement	拜访	计算指标			%	0.01		拜访状态是“已提交”才能被统计	DT拜访数	计划拜访数	中						Smart	TA-Bryan	2026/6/25		Active	
+00007	KPI-Engagement-00007	N	拜访贴合度	Call Fit Degree%	统计DT拜访计划达成率在70%到130%之间的医生个数和目标医生总个数的比例	拜访贴合度=DT拜访计划达成率在70%到130%之间的医生个数/目标医生的总个数*100%	Engagement	拜访	计算指标			%	0.01		拜访状态是“已提交”才能被统计	DT拜访计划达成率在70%到130%之间的医生个数	目标医生的总个数	中						Smart	TA-Bryan	2026/6/25		Active	
+00008	KPI-Engagement-00008	Y	目标客户拜访率	Call On Target HCP %	对目标HCP的拜访占总拜访的百分比	目标客户拜访率=对目标HCP的拜访数/总拜访数*100%	Engagement	拜访	计算指标			%	0.01		拜访状态是“已提交”才能被统计	对目标HCP的拜访数	总拜访数	中						CFCD	CFC-Harry	2026/6/2		Active	
+00009	KPI-Engagement-00009	Y	客户拜访频次	Call Freq	医生拜访的次数除以拜访医生的个数	客户拜访频次=医生拜访的次数/拜访医生的个数	Engagement	拜访	计算指标			%	0.01		拜访状态是“已提交”才能被统计	医生拜访的次数	拜访医生的个数	中						CFCD	CFC-Harry	2026/6/2		Active	
+00010	KPI-Engagement-00010	Y	目标医生变化率	Target HCP Changed%	本月目标医生相比上月目标医生发生变化数量和上月目标医生数量的占比	目标医生变化率=（本月相对上月增加的目标医生数量+本月相对上月减少的目标医生数量）/上月的目标医生数量*100%	Engagement	拜访	计算指标			%	0.01		拜访状态是“已提交”才能被统计	本月相对上月增加的目标医生数量+本月相对上月减少的目标医生数量	上月的目标医生数量	中						CFCD	CFC-Harry	2026/6/2		Active	
+00011	KPI-Engagement-00011	N	授权同意率	Consent of Target HCP% 	授权同意的目标医生数量和目标医生总数的占比	授权同意率=授权同意的目标医生数量/目标医生总数*100%	Engagement	拜访	计算指标			%	0.01		拜访状态是“已提交”才能被统计	授权同意的目标医生数量	目标医生总数	中						CFCD	CFC-Harry	2026/6/2		Active	
+00012	KPI-Engagement-00012	Y	客户拜访覆盖比例	HCP Call coverage%	销售团队拜访过的客户数量和客户的总数量占比	客户拜访覆盖比例=拜访过的客户数量/客户的总数量*100%	Engagement	拜访	计算指标			%	0.01		拜访状态是“已提交”才能被统计	拜访过的客户数量	客户的总数量	中						CFCD	CFC-Harry	2026/6/2		Active	
+00013	KPI-Engagement-00013	Y	目标客户拜访覆盖比例	Target HCP Call coverage%	销售团队拜访过的目标客户数量和目标客户的总数量占比	目标客户拜访覆盖比例=拜访过的目标客户数量/目标客户的总数量*100%	Engagement	拜访	计算指标			%	0.01		拜访状态是“已提交”才能被统计	拜访过的目标客户数量	目标客户的总数量	中						CFCD	CFC-Harry	2026/6/2		Active	
+00014	KPI-Engagement-00014	Y	AB类客户拜访覆盖比例	AB HCP Call Coverage%	销售团队拜访过的AB类客户数量和所需拜访AB类客户的数量占比	AB类客户拜访覆盖比例=拜访过的AB类客户数量/所需拜访AB类客户的数量*100%	Engagement	拜访	计算指标			%	0.01		拜访状态是“已提交”才能被统计	拜访过的AB类客户数量	所需拜访AB类客户的数量	中						CFCD	CFC-Harry	2026/6/2		Active	
+00015	KPI-Engagement-00015	Y	AB类客户拜访数量占比	Call To AB%	销售团队对AB类客户拜访的次数和拜访客户的总次数占比	AB类客户拜访数量占比=对AB类客户拜访的次数/拜访客户的总次数*100%	Engagement	拜访	计算指标	CFCD	Harry	%	0.01		拜访状态是“已提交”才能被统计	对AB类客户拜访的次数	拜访客户的总次数	中						CFCD	CFC-Harry	2026/6/2		Active	
+00016	KPI-Engagement-00016	Y	AB类客户拜访频率	AB Call Freq%	AB类医生拜访的次数和拜访AB类医生的个数的占比	AB类客户拜访频率=AB类医生拜访的次数/拜访AB类医生的个数*100%	Engagement	拜访	计算指标	CFCD	Harry	%	0.01		拜访状态是“已提交”才能被统计	AB类医生拜访的次数	拜访AB类医生的个数	中						CFCD	CFC-Harry	2026/6/2		Active	
+00017	KPI-Engagement-00017	Y	拜访次数	Call#	统计拜访次数	对拜访记录进行计数	Engagement	拜访	基础指标	CFCD	Harry	次数	1		拜访状态是“已提交”才能被统计	N/A	N/A	中						CFCD	CFC-Harry	2026/6/2		Active	
+00018	KPI-Engagement-00018	N	DT拜访次数	DT Call#	统计DT拜访次数	对拜访记录进行计数,如果实际拜访次数超出了计划拜访次数，那么就按照计划拜访次数统计	Engagement	拜访	基础指标	Smart	Lele	次数	1												TA-Bryan	2026/6/25		Active	
+00019	KPI-Engagement-00019	Y	人均日拜访量	Call# Per Day Per Mics#	统计人均每天拜访次数	人均日拜访量=拜访次数/（工作天数*拜访人数）	Engagement	拜访	计算指标	CFCD	Harry	%	0.01		拜访状态是“已提交”才能被统计	拜访次数	拜访天数*拜访人数	中						CFCD	CFC-Harry	2026/6/2		Active	
+00020	KPI-Engagement-00020	N	辅导拜访覆盖率	Coach Coverage%	统计接受过coach的人数和总人数的占比	辅导拜访覆盖率=接受过coach的人数/总人数*100%	Engagement	拜访	计算指标	CFCD	Harry	%	0.01		拜访状态是“已提交”才能被统计	接受过coach的人数	总人数	中						CFCD	CFC-Harry	2026/6/2		Active	
+00021	KPI-Engagement-00021	N	实际工作天数	Actual Work Days	统计实际工作天数	对实际工作进行计数	Engagement	拜访	基础指标	CFCD	Harry	%	1												TA-Bryan	2026/6/25		Active	
+00022	KPI-Engagement-00022	N	经理辅导时间占比	Manager Coaching Time%	经理辅导时间占净工作时间的百分比	经理辅导时间占比=经理辅导时间/净工作时间*100%	Engagement	拜访	计算指标	CFCD	Harry	%	0.01		拜访状态是“已提交”才能被统计	经理辅导时间	净工作时间	中						CFCD	CFC-Harry	2026/6/2		Active	
+00023	KPI-Engagement-00023	N	DSP使用率	DSP Usage% 	使用DSP/CLM的拜访占总拜访的百分比	DSP使用率=使用DSP/CLM的拜访次数/拜访总次数*100%	Engagement	拜访	计算指标	CFCD	Harry	%	0.01		拜访状态是“已提交”才能被统计	使用DSP/CLM的拜访次数	拜访总次数	中						CFCD	CFC-Harry	2026/6/2		Active	
+00024	KPI-Engagement-00024	N	DSP遵从率	DSP Coverage%	使用了DSP/CLM的拜访占可以使用DSP/CLM拜访的数量的百分比	DSP遵从率=使用了DSP/CLM的拜访量/可以使用DSP/CLM拜访的数量*100%	Engagement	拜访	计算指标	CFCD	Harry	%	0.01		拜访状态是“已提交”才能被统计	使用了DSP/CLM的拜访量	可以使用DSP/CLM拜访的数量	中						CFCD	CFC-Harry	2026/6/2		Active	
+00025	KPI-Engagement-00025	N	标准工具使用率	Standard Tool Utilization%	至少使用过一次标准报告工具的人数和总人数的占比	标准工具使用率=至少使用过一次标准报告工具的人数/总人数*100%	Engagement	拜访	计算指标	CFCD	Harry	%	0.01		拜访状态是“已提交”才能被统计	至少使用过一次标准报告工具的人数	总人数	中						CFCD	CFC-Harry	2026/6/2		Active	
+00026	KPI-Engagement-00026	Y	科室拜访数量	Call To Department#	通过HCP所在的科室对拜访的数量进行统计	对HCP所在的科室对拜访的计数	Engagement	拜访	基础指标	CFCD	Harry	次数	1		拜访状态是“已提交”才能被统计	N/A	N/A	中						CFCD	CFC-Harry	2026/6/2		Active	
+00027	KPI-Engagement-00027	Y	有效HCP个数	HCP Universe#	统计有效HCP个数	对有效HCP进行计数	Engagement	拜访	基础指标	CFCD	Harry	个数	1			N/A	N/A	中						CFCD	CFC-Harry	2026/6/2		Active	
+00028	KPI-Engagement-00028	N	合格DSP拜访采纳率	Qualified DSP Call%	统计合格DSP的拜访和总DSP拜访的占比	合格DSP拜访采纳率=统计合格DSP的拜访次数/总DSP拜访次数*100%	Engagement	拜访	计算指标	CFCD	Harry	%	0.01		"1）.拜访状态是“已提交”才能被统计，
+2）.使用了DSP作为拜访，且使用时常超过了30秒才能算作合格的DSP拜访"	统计合格DSP的拜访次数	总DSP拜访次数	中						CFCD	CFC-Harry	2026/6/2		Active	
+00029	KPI-Engagement-00029	Y	目标医生数	Target HCP#	目标拜访医生的个数	对目标医生ID进行计数	Engagement	拜访	基础指标	CFCD	Harry	个数	1			N/A	N/A	中						CFCD	CFC-Harry	2026/6/2		Active	
+00030	KPI-Engagement-00030	Y	A类客户的拜访数	Call to Segment A customers #	销售团队拜访A类医生的数量	对拜访记录进行计数	Engagement	拜访	基础指标			次数	1		拜访状态是“已提交”才能被统计	N/A	N/A	中		ZAVI,Nurtec				DDD	CFC-Harry	2026/6/2		Active	需要提供A类医生的列表
+00031	KPI-Engagement-00031	Y	B类客户的拜访数	Call to Segment B customers #	销售团队拜访B类医生的数量	对拜访记录进行计数	Engagement	拜访	基础指标			次数	1		拜访状态是“已提交”才能被统计	N/A	N/A	中		ZAVI,Nurtec				DDD	CFC-Harry	2026/6/2		Active	需要提供B类医生的列表
+00032	KPI-Engagement-00032	Y	A&B客户数	AB HCP#	A&B类型的目标客户数量	对A&B类医生进行计数	Engagement	拜访	基础指标			个数	1		拜访状态是“已提交”才能被统计	N/A	N/A	中		Cibinqo				DDD	CFC-Harry	2026/6/2		Active	
+00033	KPI-Engagement-00033	Y	人均A类目标医生数	A HCP# per MICS	统计人均有多少个A类目标医生	人均A类目标医生数=A类目标医生的个数/MICS人数	Engagement	拜访	计算指标			个数	0.01		拜访状态是“已提交”才能被统计										TA-Bryan	2026/6/25		Active	
+00034	KPI-Engagement-00034	Y	人均B类目标医生数	B HCP# per MICS	统计人均有多少个B类目标医生	人均B类目标医生数=B类目标医生的个数/MICS人数	Engagement	拜访	计算指标			个数	0.01		拜访状态是“已提交”才能被统计										TA-Bryan	2026/6/25		Active	
+00035	KPI-Engagement-00035	Y	拜访A类医生个数	Call A#	统计拜访A类医生个数	对拜访过的A类医生进行计数	Engagement	拜访	基础指标			个数	1		拜访状态是“已提交”才能被统计										TA-Bryan	2026/6/25		Active	
+00036	KPI-Engagement-00036	Y	拜访B类医生个数	Call B#	统计拜访B类医生个数	对拜访过的B类医生进行计数	Engagement	拜访	基础指标			个数	1		拜访状态是“已提交”才能被统计										TA-Bryan	2026/6/25		Active	
+00037	KPI-Engagement-00037	Y	拜访A&B客户比例	Call to A&B%	销售团队拜访A，B类客户数和拜访的总数的占比	拜访A&B客户比例=（A类客户的拜访数量+B类客户的拜访数量）/拜访的总数*100%	Engagement	拜访	计算指标			%	0.01		拜访状态是“已提交”才能被统计	A类客户的拜访数量+B类客户的拜访数量	拜访客户的总数	中		ZAVI,Nurtec				DDD	CFC-Harry	2026/6/2		Active	
+00038	KPI-Engagement-00038	Y	A类客户拜访覆盖比例	A HCP Call coverage%	销售团队拜访过的A类客户数量和所需拜访A类客户的数量占比	A类客户拜访覆盖比例=拜访过的A类客户数量/所需拜访A类客户的数量*100%	Engagement	拜访	计算指标			%	0.01		拜访状态是“已提交”才能被统计	拜访过的A类客户数量	所需拜访A类客户的数量	中		ZAVI,Lorbrena,Cibinqo,Nurtec				DDD	CFC-Harry	2026/6/2		Active	
+00039	KPI-Engagement-00039	Y	B类客户拜访覆盖比例	B HCP Call coverage%	销售团队拜访过的B类客户数量和所需拜访B类客户的数量占比	A类客户拜访覆盖比例=拜访过的B类客户数量/所需拜访B类客户的数量*100%	Engagement	拜访	计算指标			%	0.01		拜访状态是“已提交”才能被统计	拜访过的B类客户数量	所需拜访B类客户的数量	中		ZAVI,Lorbrena,Cibinqo,Nurtec				DDD	CFC-Harry	2026/6/2		Active	
+00040	KPI-Engagement-00040	Y	A类客户拜访频率	A Call Freq	A类医生拜访的次数和拜访A类医生的个数的占比	A类客户拜访频率=A类医生拜访的次数/拜访A类医生的个数*100%	Engagement	拜访	计算指标			%	0.01		拜访状态是“已提交”才能被统计	A类医生拜访的次数	拜访A类医生的个数	中		Lorbrena,Cibinqo,Nurtec				DDD	CFC-Harry	2026/6/2		Active	
+00041	KPI-Engagement-00041	Y	B类客户拜访频率	B Call Freq	B类医生拜访的次数和拜访B类医生的个数的占比	B类客户拜访频率=B类医生拜访的次数/拜访B类医生的个数*100%	Engagement	拜访	计算指标			%	0.01		拜访状态是“已提交”才能被统计	B类医生拜访的次数	拜访B类医生的个数	中		Lorbrena,Cibinqo,Nurtec				DDD	CFC-Harry	2026/6/2		Active	
+00042	KPI-Engagement-00042	Y	Engagement总分	Engagement Total Score	统计engagement的整体表现	Engagement总分=AB类客户拜访覆盖比例*33+AB类客户拜访频率*33+LB&GD会议室占MICS数比例*33	Engagement	拜访	计算指标			分数	0.01												TA-Bryan	2026/6/25		Active	
+00043	KPI-Engagement-00043	Y	LB会议数	LB Meeting#	举办LB会议的数量	从不同的维度对会议记录进行计数	Engagement	Meeting	基础指标	GCA		次数	1		统计会议Status是（"Close Out","HCP Contract/FCL","Honoraria/External Funding Payment","Reconciliation"）且会议的Sub_Status不是“Cancled”	N/A	N/A	中		ZAVI,Lorbrena,Cibinqo,Nurtec				DDD	GCA-Ray	2026/6/12		Active	需要提供LB的列表
+00044	KPI-Engagement-00044	Y	MICS人数	MICS#	销售代表的人数	从不同的维度对MICS人数计数	Engagement	Meeting	基础数据	GCA		人数	1			N/A	N/A	中		ZAVI				DDD	GCA-Ray	2026/6/12		Active	
+00045	KPI-Engagement-00045	Y	LB会议数占MICS数	LB per MICS	LB会议数和MICS数的比值	LB会议数占MICS数比例=LB会议数/在岗MICS数	Engagement	Meeting	计算指标	GCA		%	0.01		"1.在统计MICS人数的时候需要排除当月新入职的人
+2.统计会议Status是（""Close Out"",""HCP Contract/FCL"",""Honoraria/External Funding Payment"",""Reconciliation""）且会议的Sub_Status不是“Cancled”"	LB会议数	MICS数	中		ZAVI				DDD	GCA-Ray	2026/6/12		Active	
+00046	KPI-Engagement-00046	Y	GD会议数	GD Meeting#	举办GD类型会议的数量	从不同的维度对会议记录进行计数	Engagement	Meeting	基础指标	GCA		次数	1		统计会议Status是（"Close Out","HCP Contract/FCL","Honoraria/External Funding Payment","Reconciliation"）且会议的Sub_Status不是“Cancled”	N/A	N/A	中		ZAVI,Lorbrena,Cibinqo,Nurtec				DDD	GCA-Ray	2026/6/12		Active	
+00047	KPI-Engagement-00047	Y	GD会议数占MICS数	GD per MICS	GD会议数和MICS数的比值	GD会议数占MICS数比例=GD会议数/在岗MICS数	Engagement	Meeting	计算指标	GCA		%	0.01		"1.在统计MICS人数的时候需要排除当月新入职的人
+2.统计会议Status是（""Close Out"",""HCP Contract/FCL"",""Honoraria/External Funding Payment"",""Reconciliation""）且会议的Sub_Status不是“Cancled"	LB会议数	MICS数	中		ZAVI				DDD	GCA-Ray	2026/6/12		Active	
+00048	KPI-Engagement-00048	Y	PO会议数	PO Meeting#	举办PO会议的数量	从不同的维度对会议记录进行计数	Engagement	Meeting	基础指标	GCA		次数	1		统计会议Status是（"Close Out","HCP Contract/FCL","Honoraria/External Funding Payment","Reconciliation"）且会议的Sub_Status不是“Cancled”	N/A	N/A	中		ZAVI,Lorbrena,Cibinqo				DDD	GCA-Ray	2026/6/12		Active	
+00049	KPI-Engagement-00049	Y	PO会议数占DM数	PO per DM	PO会议数和DM数的比值	PO会议数占DM数比例=PO会议数/DM数	Engagement	Meeting	计算指标	GCA		%	0.01												TA-Bryan	2026/6/25		Active	
+00050	KPI-Engagement-00050	Y	LB&GD会议占比	LB&GD Meeting%	各品牌的“LB会议数占MICS数比例”和“GD会议数占MICS数比例”之和占所有品牌(Zavi&Emb&Sul)的“LB会议数占MICS数比例”和“GD会议数占MICS数比例”之和的比例	举例：Zavi LB&GD会议占比=（Zavi的LB会议数占MICS数比例+Zavi的GD会议数占MICS数比例)/(Zavi的LB会议数占MICS数比例+Zavi的GD会议数占MICS数比例+Emb的LB会议数占MICS数比例+Emb的GD会议数占MICS数比例+Sul的LB会议数占MICS数比例+Sul的GD会议数占MICS数比例)*100%	Engagement	Meeting	计算指标	GCA		%	0.01		统计会议Status是（"Close Out","HCP Contract/FCL","Honoraria/External Funding Payment","Reconciliation"）且会议的Sub_Status不是“Cancled”	各品牌的“LB会议数占MICS数比例”和“GD会议数占MICS数比例”之和	所有品牌(Zavi&Emb&Sul)的“LB会议数占MICS数比例”和“GD会议数占MICS数比例”之和	中		ZAVI				DDD	GCA-Ray	2026/6/12		Active	
+00051	KPI-Engagement-00051	Y	讲者人次	Speaker Visits#	统计参加会议的讲者次数	对每场会议参加的讲者进行计数	Engagement	Meeting	基础指标	GCA		个数	1		1.统计会议Status是（"Close Out","HCP Contract/FCL","Honoraria/External Funding Payment","Reconciliation"）且会议的Sub_Status不是“Cancled”	N/A	N/A	中						Smart	GCA-Ray	2026/6/12		Active	
+00052	KPI-Engagement-00052	Y	讲者人数	Speaker #	统计参加会议的讲者人数	对参加会议的讲者进行去重计数	Engagement	Meeting	基础指标	GCA		人数	1		1.统计会议Status是（"Close Out","HCP Contract/FCL","Honoraria/External Funding Payment","Reconciliation"）且会议的Sub_Status不是“Cancled”	N/A	N/A	中						Smart	GCA-Ray	2026/6/12		Active	
+00053	KPI-Engagement-00053	Y	团队人均覆盖讲者数量	Speaker# Per Teams	参加会议的讲者人数和团队人数的占比	团队人均覆盖讲者数量=参加会议的讲者人数/团队参加会议的人数*100%	Engagement	Meeting	计算指标	GCA		人数	0.01		"1.统计会议Status是（""Close Out"",""HCP Contract/FCL"",""Honoraria/External Funding Payment"",""Reconciliation""）且会议的Sub_Status不是“Cancled”
+2.统计团队人数的时候需要排除当月新入职的员工，需要包含本级及下属员工
+3.在统计讲者人数的时候，需要多讲者多次参加会议的情况进行去重，也就是同一个讲者多次参加会议，只能算一次"	参加会议的讲者人数	团队参加会议的人数	中						Smart	GCA-Ray	2026/6/12		Active	
+00054	KPI-Engagement-00054	Y	团队人均覆盖讲者人次	Speaker Visits# Per Teams	参加会议的讲者人次和团队人数的占比	团队人均覆盖讲者人次=参加会议的讲者次数/团队参加会议的人数*100%	Engagement	Meeting	计算指标	GCA		次数	0.01		"1.统计会议Status是（""Close Out"",""HCP Contract/FCL"",""Honoraria/External Funding Payment"",""Reconciliation""）且会议的Sub_Status不是“Cancled”
+2.统计团队人数的时候需要排除当月新入职的员工，需要包含本级及下属员工"	参加会议的讲者次数	团队参加会议的人数	中						Smart	GCA-Ray	2026/6/12		Active	
+00055	KPI-Engagement-00055	Y	有讲者的LB&GD会议占比	Speaker LB&GD Meeting%	会议类型为LB/GD的会议中，关联讲者数量不为0的会议数量和会议总数的占比	有讲者的LB&GD会议占比=有讲者参与的LB&GD的会议数量/LB&GD总数量*100%	Engagement	Meeting	计算指标	GCA		%	0.01		1.统计会议Status是（"Close Out","HCP Contract/FCL","Honoraria/External Funding Payment","Reconciliation"）且会议的Sub_Status不是“Cancled”	有讲者参与的LB&GD的会议数量	LB&GD总数量	中						Smart	GCA-Ray	2026/6/12		Active	
+00056	KPI-Engagement-00056	Y	会均参会人次	Attendees Per Meeting	会议的参会人总数与会议总数的比值	会均参会人次=参会人总数/会议总数*100%	Engagement	Meeting	计算指标	GCA		%	0.01		1.统计会议Status是（"Close Out","HCP Contract/FCL","Honoraria/External Funding Payment","Reconciliation"）且会议的Sub_Status不是“Cancled”	参会人总数	会议总数	中						Smart	GCA-Ray	2026/6/12		Active	
+00057	KPI-Engagement-00057	Y	会议覆盖医院数量	Meeting Cover HCO#	统计会议所参加的HCP所属HCO的个数	对会议所参加的HCP所属HCO进行去重计数	Engagement	Meeting	基础指标	GCA		个数	1		1.统计会议Status是（"Close Out","HCP Contract/FCL","Honoraria/External Funding Payment","Reconciliation"）且会议的Sub_Status不是“Cancled”	N/A	N/A	中						Smart	GCA-Ray	2026/6/12		Active	
+00058	KPI-Engagement-00058	Y	会议覆盖医院次数	Meeting Cover HCO Visits#	统计会议所参加的HCP所属HCO的次数	对会议所参加的HCP所属HCO进行计数	Engagement	Meeting	基础指标	GCA		次数	1		1.统计会议Status是（"Close Out","HCP Contract/FCL","Honoraria/External Funding Payment","Reconciliation"）且会议的Sub_Status不是“Cancled”	N/A	N/A	中						Smart	GCA-Ray	2026/6/12		Active	
+00059	KPI-Engagement-00059	Y	团队人均会议覆盖医院数量	Meeting Cover HCO# Per Teams	统计会议所参加的HCP所属HCO的个数与团队人数的比例	团队人均会议覆盖医院数量=会议所参加的HCP所属HCO的个数/团队的人数*100%	Engagement	Meeting	计算指标	GCA		%	0.01		"1.统计会议Status是（""Close Out"",""HCP Contract/FCL"",""Honoraria/External Funding Payment"",""Reconciliation""）且会议的Sub_Status不是“Cancled”
+2.统计团队人数的时候需要排除当月新入职的员工，需要包含本级及下属员工"	会议所参加的HCP所属HCO的个数	团队的人数	中						Smart	GCA-Ray	2026/6/12		Active	
+00060	KPI-Engagement-00060	Y	团队人均会议覆盖医院次数	Meeting Cover HCO Visits# Per Teams	统计会议所参加的HCP所属HCO的次数与团队人数的比例	团队人均会议覆盖医院次数=会议所参加的HCP所属HCO的次数/团队的人数*100%	Engagement	Meeting	计算指标	GCA		%	0.01		"1.统计会议Status是（""Close Out"",""HCP Contract/FCL"",""Honoraria/External Funding Payment"",""Reconciliation""）且会议的Sub_Status不是“Cancled”
+2.统计团队人数的时候需要排除当月新入职的员工，需要包含本级及下属员工"	会议所参加的HCP所属HCO的次数	团队的人数	中						Smart	GCA-Ray	2026/6/12		Active	
+00061	KPI-Engagement-00061	Y	会议数量	Meeting#	对会议的个数	对举办的会议进行计数	Engagement	Meeting	基础数据	GCA		个数	1		1.统计会议Status是（"Close Out","HCP Contract/FCL","Honoraria/External Funding Payment","Reconciliation"）且会议的Sub_Status不是“Cancled”	N/A	N/A	中						Smart	GCA-Ray	2026/6/12		Active	
+00062	KPI-Engagement-00062	Y	会议占比	Meeting%	统计按汇总维度分类汇总的会议数量和会议总数的占比	会议占比=按汇总维度分类汇总的会议数量/会议总数*100%	Engagement	Meeting	计算指标	GCA		%	0.01		1.统计会议Status是（"Close Out","HCP Contract/FCL","Honoraria/External Funding Payment","Reconciliation"）且会议的Sub_Status不是“Cancled”	按汇总维度分类汇总的会议数量	会议总数	中						Smart	GCA-Ray	2026/6/12		Active	
+00063	KPI-Engagement-00063	Y	参会人次覆盖率	Meeting Visits Coverage%	统计按各维度分类计算会议的参会人次和会议的总参会人次的比例	参会人次覆盖率=按各维度分类计算会议的参会人次/会议的总参会人次*100%	Engagement	Meeting	计算指标	GCA		%	0.01		1.统计会议Status是（"Close Out","HCP Contract/FCL","Honoraria/External Funding Payment","Reconciliation"）且会议的Sub_Status不是“Cancled”	按各维度分类计算会议的参会人次	会议的总参会人次	中						Smart	GCA-Ray	2026/6/12		Active	
+00064	KPI-Engagement-00064	Y	参会人次	Meeting Visits#	统计参数的人次	对参会的人次进行累计求和	Engagement	Meeting	基础指标	GCA		次数	1		1.统计会议Status是（"Close Out","HCP Contract/FCL","Honoraria/External Funding Payment","Reconciliation"）且会议的Sub_Status不是“Cancled”	N/A	N/A	中						Smart	GCA-Ray	2026/6/12		Active	
+00065	KPI-Engagement-00065	Y	实际参会人次	Actual Meeting Visits#	统计实际参数的人次	对实际参会的人次进行累计求和	Engagement	Meeting	基础指标	GCA		次数	1		1.统计会议Status是（"Close Out","HCP Contract/FCL","Honoraria/External Funding Payment","Reconciliation"）且会议的Sub_Status不是“Cancled”	N/A	N/A	中						Smart	GCA-Ray	2026/6/12		Active	
+00066	KPI-Engagement-00066	Y	实际会均参会人次	Actual Attendees Per Meeting	实际会议的参会人总数与会议总数的比例	实际会均参会人次=实际参会人总数/会议总数*100%	Engagement	Meeting	计算指标	GCA		%	0.01		1.统计会议Status是（"Close Out","HCP Contract/FCL","Honoraria/External Funding Payment","Reconciliation"）且会议的Sub_Status不是“Cancled”	实际参会人总数	会议总数	中						Smart	GCA-Ray	2026/6/12		Active	
+00067	KPI-Engagement-00067	Y	会均讲者数	Speaker# Per Meeting	统计一场会邀请了多少个讲者	会均讲者数=会议邀请的讲者人数/会议总数*100%	Engagement	Meeting	计算指标	GCA		%	0.01		1.统计会议Status是（"Close Out","HCP Contract/FCL","Honoraria/External Funding Payment","Reconciliation"）且会议的Sub_Status不是“Cancled”	会议邀请的讲者人数	会议总数	中						Smart	GCA-Ray	2026/6/12		Active	
+00068	KPI-Engagement-00068	Y	讲者数量占比	Speaker# Coverage%	统计按维度分类汇总的会议关联讲者人数和讲者总数的比例	讲者数量占比=按维度分类汇总的会议关联讲者人数/讲者总数*100%	Engagement	Meeting	计算指标	GCA		%	0.01		1.统计会议Status是（"Close Out","HCP Contract/FCL","Honoraria/External Funding Payment","Reconciliation"）且会议的Sub_Status不是“Cancled”	按维度分类汇总的会议关联讲者人数	讲者总数	中						Smart	GCA-Ray	2026/6/12		Active	
+00069	KPI-Engagement-00069	Y	AB类讲者占比	AB Speaker Coverage%	统计AB类讲者的数量和讲者总数量的比例	AB类讲者占比=AB类讲者的数量/讲者总数量*100%	Engagement	Meeting	计算指标	GCA		%	0.01		"1.统计会议Status是（""Close Out"",""HCP Contract/FCL"",""Honoraria/External Funding Payment"",""Reconciliation""）且会议的Sub_Status不是“Cancled”
+2.讲者分级的月份和讲者参加会议的月份保持一致"	AB类讲者的数量	讲者总数量	中						Smart	GCA-Ray	2026/6/12		Active	
+00070	KPI-Engagement-00070	Y	AB类参会人占比	AB HCP Coverage%	统计参会人员中AB类客户和总客户数的占比	AB类参会人占比=参会中AB类客户数量/参会的总客户数*100%	Engagement	Meeting	计算指标	GCA		%	0.01		"1.统计会议Status是（""Close Out"",""HCP Contract/FCL"",""Honoraria/External Funding Payment"",""Reconciliation""）且会议的Sub_Status不是“Cancled”
+2.HCP分级的月份和HCP参加会议的月份保持一致"	参会中AB类客户数量	参会的总客户数	中						Smart	GCA-Ray	2026/6/12		Active	
+00071	KPI-Engagement-00071	Y	AB分级参会医生占比	AB Segment HCP Coverage%	统计参会医生中AB类的个数和有分级的个数的占比	AB分级参会医生占比=参会医生中AB类的个数/参会医生中有分级的个数*100%	Engagement	Meeting	计算指标	GCA		%	0.01		"1.统计会议Status是（""Close Out"",""HCP Contract/FCL"",""Honoraria/External Funding Payment"",""Reconciliation""）且会议的Sub_Status不是“Cancled”
+2.HCP分级的月份和HCP参加会议的月份保持一致"	参会医生中AB类的个数	参会医生中有分级的个数	中						Smart	GCA-Ray	2026/6/12		Active	
+00072	KPI-Engagement-00072	Y	单次讲者数	One Time Speaker#	统计近6个月只有一次的讲者数量	对近6个月只有一次的讲者进行计数	Engagement	Meeting	基础指标	GCA		个数	1		1.统计会议Status是（"Close Out","HCP Contract/FCL","Honoraria/External Funding Payment","Reconciliation"）且会议的Sub_Status不是“Cancled”	N/A	N/A	中						Smart	GCA-Ray	2026/6/12		Active	
+00073	KPI-Engagement-00073	Y	讲课频次	Speaker Frequence	统计每位讲者参加会议的频次	讲课频次=会议关联的讲者人次/会议关联的讲者人数*100%	Engagement	Meeting	计算指标	GCA		%	0.01		1.统计会议Status是（"Close Out","HCP Contract/FCL","Honoraria/External Funding Payment","Reconciliation"）且会议的Sub_Status不是“Cancled”	会议关联的讲者人次	会议关联的讲者人数	中						Smart	GCA-Ray	2026/6/12		Active	
+00074	KPI-Healthiness-00074	Y	代表空岗数	MICS vacant#	销售团队中岗位类型是MICS，但没有实际的人负责的数量	对岗位类型是MICS,但没有匹配实际代表的岗位计数	Healthiness	Staffing	基础指标			个数	1			N/A	N/A	中		ZAVI,Lorbrena				DDD	TA-Minjia&Zhaolin	2026/6/25		Active	
+00075	KPI-Healthiness-00075	Y	代表岗位数	MICS Position#	销售团队中岗位类型是MICS的总个数	对岗位类型是MICS的岗位计数	Healthiness	Staffing	基础指标			个数	1			N/A	N/A	中		ZAVI				DDD	TA-Minjia&Zhaolin	2026/6/25		Active	
+00076	KPI-Healthiness-00076	Y	代表空岗率	MICS vacant%	销售团队中代表的空岗数和代表的岗位总数的占比	代表空岗率=代表空岗数/代表岗位数*100%	Healthiness	Staffing	计算指标			%	0.01			N/A	N/A	中		ZAVI,Cibinqo,Nurtec				DDD	TA-Angel	2026/6/9		Active	
+00077	KPI-Healthiness-00077	Y	DM空岗数	DM vacant#	销售团队中岗位类型是DM，但没有实际的人负责的数量	对岗位类型是DM,但没有匹配实际人的岗位计数	Healthiness	Staffing	基础指标			个数	1			N/A	N/A	中		ZAVI,Lorbrena				DDD	TA-Minjia&Zhaolin	2026/6/25		Active	
+00078	KPI-Healthiness-00078	Y	DM岗位数	DM Position#	销售团队中岗位类型是DM的总个数	对岗位类型是DM的岗位计数	Healthiness	Staffing	基础指标			个数	1			N/A	N/A	中		ZAVI				DDD	TA-Minjia&Zhaolin	2026/6/25		Active	
+00079	KPI-Healthiness-00079	Y	MICS&DM空岗率	MICS&DM vacant%	销售团队中代表&DM的空岗数占代表&DM的岗位总数的比例	DM空岗率=(代表空岗数+DM空岗数)/(代表岗位数+DM岗位数)*100%	Healthiness	Staffing	计算指标			%	0.01			代表空岗数+DM空岗数	代表岗位数+DM岗位数	中		ZAVI				DDD	TA-Minjia&Zhaolin	2026/6/25		Active	
+00080	KPI-Healthiness-00080	Y	活跃FTE个数	Active FTE#	统计岗位类型是正常岗位且有人员在职的个数	对岗位类型是正常岗位且有人员进行计数	Healthiness	Staffing	基础指标			个数	1			N/A	N/A	中						CFCD	TA-Bryan	2026/6/25		Active	
+00081	KPI-Healthiness-00081	N	MICS离职人数	MICS Turnover#	销售团队中职位是MICS的离职人数	对职位类型是MICS的离职人数计数	Healthiness	Staffing	基础指标			个数	1			N/A	N/A	中		ZAVI				DDD	TA-Minjia&Zhaolin	2026/6/25		Active	
+00082	KPI-Healthiness-00082	Y	MICS在职人数	MICS #	销售团队中职位是MICS的在职人数	对职位类型是MICS的在职人数计数	Healthiness	Staffing	基础指标			个数	1												TA-Bryan	2026/6/25		Active	
+00083	KPI-Healthiness-00083	N	MICS离职率	MICS Turnover%	销售团队中职位是MICS的离职人数和MICS总人数的占比	MICS离职率=MICS的离职人数/MICS总人数*100%	Healthiness	Staffing	计算指标			%	0.01			MICS的离职人数	MICS总人数	中		Nurtec				DDD	TA-Yue, Chang	2026/6/16		Active	
+00084	KPI-Healthiness-00084	N	DM离职人数	DM Turnover#	销售团队中职位是DM的离职人数	对职位类型是DM的离职人数计数	Healthiness	Staffing	基础指标			个数	1			N/A	N/A	中		ZAVI				DDD	TA-Minjia&Zhaolin	2026/6/25		Active	
+00085	KPI-Healthiness-00085	Y	DM在职人数	DM #	销售团队中职位是DM的人数	对职位类型是DM的人数计数	Healthiness	Staffing	基础指标			个数	1			N/A	N/A	中		Lorbrena				DDD	TA-Bryan	2026/6/25		Active	
+00086	KPI-Healthiness-00086	N	YTD被动离职人数	YTD Invol#	统计YTD被动离职人数	对YTD被动离职的人进行计数	Healthiness	Staffing	基础指标			个数	1												TA-Bryan	2026/6/25		Active	
+00087	KPI-Healthiness-00087	Y	员工入职时长	Employ Hired Month#	统计员工入职时长	对员工入职的时长进行月份统计	Healthiness	Staffing	基础指标			个数	1												TA-Bryan	2026/6/25		Active	
+00088	KPI-Healthiness-00088	Y	员工在岗时长	Employ in Position Month#	统计员工在岗时长	对员工在岗的时长进行月份统计	Healthiness	Staffing	基础指标			个数	1												TA-Bryan	2026/6/25		Active	
+00089	KPI-Healthiness-00089	N	年度MICS离职人数	YTD MICS Turnover#	从每年第1天开始累计统计销售团队在当年职位是MICS的离职人数	对职位类型是MICS的离职人数计数	Healthiness	Staffing	基础指标			个数	1			N/A	N/A	中		Lorbrena				DDD	TA-Bryan	2026/6/25		Active	
+00090	KPI-Healthiness-00090	N	年度DM离职人数	YTD DM Turnover#	从每年第1天开始累计统计销售团队在当年职位是DM的离职人数	对职位类型是DM的离职人数计数	Healthiness	Staffing	基础指标			个数	1			N/A	N/A	中		Lorbrena				DDD	TA-Bryan	2026/6/25		Active	
+00091	KPI-Healthiness-00091	N	年度离职率	YTD Turnover%	从每年第1天开始累计统计销售团队在当年离职人数和总人数的占比	年度离职率=YTD离职人数/YTD总人数	Healthiness	Staffing	计算指标			%	0.01			YTD离职人数	YTD总人数	中		Cibinqo				DDD	TA-Angel	2026/6/9		Active	
+00092	KPI-Healthiness-00092	N	年度被动离职率	YTD Invol Rate%	从每年第1天开始累计统计销售团队在当年被动离职人数和总人数的占比	年度被动离职率=YTD被动离职人数/YTD总人数	Healthiness	Staffing	计算指标			%	0.01			YTD被动离职人数	YTD总人数	中		Cibinqo				DDD	TA-Angel	2026/6/9		Active	
+00093	KPI-Healthiness-00093	N	MICS关键人才流失人数	MICS Key Talent Turnover#	统计销售团队中职位是MICS的且是关键人才的离职人数	对职位类型是MICS且是关键人才的离职人数计数	Healthiness	Staffing	基础指标			个数	1			N/A	N/A	中		ZAVI				DDD	TA-Minjia&Zhaolin	2026/6/25		Active	
+00094	KPI-Healthiness-00094	N	DM关键人才流失人数	DM Key Talent Turnover#	统计销售团队中职位是DM的且是关键人才的离职人数	对职位类型是DM且是关键人才的离职人数计数	Healthiness	Staffing	基础指标			个数	1			N/A	N/A	中		ZAVI				DDD	TA-Minjia&Zhaolin	2026/6/25		Active	
+00095	KPI-Healthiness-00095	N	年度主动离职率	YTD Vol Rate%	从每年第1天开始累计统计销售团队在当年主动离职人数和总人数的占比	年度主动离职率=YTD主动离职人数/YTD总人数	Healthiness	Staffing	计算指标			%	0.01			YTD主动离职人数	YTD总人数	中		Cibinqo				DDD	TA-Angel	2026/6/9		Active	
+00096	KPI-Healthiness-00096	N	月度被动离职人数	MTD Invol Rate#	从每月第1天开始累计统计销售团队在当年被动离职人数	对本月被动离职人数计数	Healthiness	Staffing	基础指标			个数	1												TA-Bryan	2026/6/25		Active	
+00097	KPI-Healthiness-00097	N	月度主动离职人数	MTD Vol Rate#	从每月第1天开始累计统计销售团队在当月主动离职人数	对本月主动离职人数计数	Healthiness	Staffing	基础指标			个数	1												TA-Bryan	2026/6/25		Active	
+00098	KPI-Achievement-00098	Y	实际销售金额	Actual Sales Amount	统计实际的销售金额	从不同的维度累计求和	Achievement	In-Market	基础指标			元（RMB)	0.01			N/A	N/A	高		ZAVI				DDD	TA-Minjia&Zhaolin	2026/6/25		Active	
+00099	KPI-Achievement-00099	Y	销售目标金额	Target Sales Amount	统计计划销售的金额	从不同的维度累计求和	Achievement	In-Market	基础指标			元（RMB)	0.01			N/A	N/A	高		ZAVI				DDD	TA-Minjia&Zhaolin	2026/6/25		Active	
+00100	KPI-Achievement-00100	Y	销售金额达成率	Actual A/T%	统计实际销售金额和指标的占比情况	销售金额达成率=实际销量金额/销售指标标金额*100%	Achievement	In-Market	计算指标			%	0.01			实际销量金额	销售目标金额	高		ZAVI,Cibinqo				DDD	TA-Angel	2026/6/9		Active	
+00101	KPI-Achievement-00101	N	COE医院达成率	COEs Sales Value Achievement%	基于月度统计COE医院实际销售金额和计划COE医院销售金额的占比情况	COE医院达成率=COE医院实际销量金额/COE医院销售目标金额*100%	Achievement	In-Market	计算指标			%	0.01			COE医院实际销量金额	COE医院销售目标金额	高		Nurtec				DDD	TA-Yue, Chang	2026/6/16		Active	
+00102	KPI-Achievement-00102	N	QC医院达成率	QC Sales Value Achievement%	基于月度统计QC医院实际销售金额和计划QC医院销售金额的占比情况	QC医院达成率=QC医院实际销量金额/QC医院销售目标金额*100%	Achievement	In-Market	计算指标			%	0.01			QC医院实际销量金额	QC医院销售目标金额	高		Nurtec				DDD	TA-Yue, Chang	2026/6/16		Active	
+00103	KPI-Achievement-00103	Y	QTD销售金额达成率	QTD Sales Value Achievement%	基于季度统计实际销售金额和计划销售金额的占比情况	销售金额达成率=实际销量金额/销售目标金额*100%	Achievement	In-Market	计算指标			%	0.01			实际销量金额	销售目标金额	高		Lorbrena,Cibinqo,Nurtec				DDD	TA-Angel	2026/6/9		Active	
+00104	KPI-Achievement-00104	N	预测销售金额	Forecast Sales Amount	统计预测的销售金额	从不同的维度累计求和	Achievement	In-Market	基础指标			元（RMB)	0.01			N/A	N/A	高		ZAVI				DDD	TA-Minjia&Zhaolin	2026/6/25		Active	
+00105	KPI-Achievement-00105	N	预测达成率	Forecast A/T%	预测销售金额和指标金额的占比情况	预测达成率=预测销售金额/销售指标金额*100%	Achievement	In-Market	计算指标			%	0.01			预测销售金额	销售目标金额	高		ZAVI,Lorbrena				DDD	TA-Minjia&Zhaolin	2026/6/25		Active	
+00106	KPI-Achievement-00106	N	预测和实际达成的差异	A/T% fcst. Gap	统计预测达成率和实际达成率之间的差异	预测和实际达成的差异=ABS（销售金额达成率-预测达成率）	Achievement	In-Market	计算指标			%	0.01			N/A	N/A	高		ZAVI				DDD	TA-Minjia&Zhaolin	2026/6/25		Active	
+00107	KPI-Achievement-00107	Y	本季度迄今销售贡献率	QTD Sales contr%	监控销售团队（DM,RM,SG,BU）在QTD的周期内，某个品牌上面各自对整体的占比情况	本季度迄今销售贡献率=销售团队在QTD的周期内某个品牌上面各自的销量/销售团队在QTD的周期内某个品牌上面整体的销量*100%	Achievement	In-Market	计算指标			%	0.01			销售团队在QTD的周期内某个品牌上面各自的销量	销售团队在QTD的周期内某个品牌上面整体的销量	高		ZAVI,Lorbrena				DDD	TA-Minjia&Zhaolin	2026/6/25		Active	
+00108	KPI-Achievement-00108	N	COEs医院的销售贡献率	COEs Sales contr%	COE类型医院的销售额和所有医院的销售额的占比	COEs的销售贡献率=COE类型医院的销售额/所有医院的销售额*100%	Achievement	In-Market	计算指标			%	0.01			COE类型医院的销售额	所有医院的销售额	高		Nurtec				DDD	TA-Yue, Chang	2026/6/16		Active	
+00109	KPI-Achievement-00109	N	COEs医院增长率	COE GR%	COE医院的当月销量对比前3个月的月度平均销量的增长率	COEs医院增长率=(COE医院当前月份的实际销量/COE医院前3个月的实际销量平均值-1)*100%	Achievement	In-Market	计算指标			%	0.01			COE医院当月的销售额/COE医院前3个月的总销售额	所有医院当月的销售额/所有医院前3个月的总销售额	高		Nurtec				DDD	TA-Yue, Chang	2026/6/16		Active	
+00110	KPI-Achievement-00110	N	QC医院的销售贡献率	QC Sales contr%	QC类型医院的销售额和所有医院的销售额的占比	QC的销售贡献率=QC类型医院的销售额/所有医院的销售额*100%	Achievement	In-Market	计算指标			%	0.01			QC类型医院的销售额	所有医院的销售额	高		Nurtec				DDD	TA-Yue, Chang	2026/6/16		Active	
+00111	KPI-Achievement-00111	N	QC医院增长率	QC GR%	QC医院的当月销量对比前3个月的月度平均销量的增长率	QCs医院增长率=(QC医院当前月份的实际销量/QC医院前3个月的实际销量平均值-1)*100%	Achievement	In-Market	计算指标			%	0.01			QC医院当月的销售额/QC医院前3个月的总销售额	所有医院当月的销售额/所有医院前3个月的总销售额	高		Nurtec				DDD	TA-Yue, Chang	2026/6/16		Active	
+00112	KPI-Achievement-00112	Y	月度销售金额同比增速	Monthly Sales GR% vs. LY 	基于同期月份统计今年的销售额情况和去年的销售额情况比较	月度销额同比增速=(当前月份的实际销售金额/去年同期月份的实际销售金额-1)*100%	Achievement	In-Market	计算指标			元（RMB)	0.01			当前月份的实际销售金额	去年同期月份的实际销售金额	高		ZAVI				DDD	TA-Minjia&Zhaolin	2026/6/25		Active	
+00113	KPI-Achievement-00113	Y	月度销量同比增速	Monthly Sales Volume GR% vs. LY 	基于同期月份统计今年的销售量情况和去年的销售量情况比较	月度销量同比增速=(当前月份的实际销售数量/去年同期月份的实际销售数量-1)*100%	Achievement	In-Market	计算指标			元（RMB)	0.01			当前月份的实际销售数量	去年同期月份的实际销售数量	高		Cibinqo				DDD	TA-Angel	2026/6/9		Active	
+00114	KPI-Achievement-00114	Y	月度销量同比增速(Nurtec)	Monthly Sales Volume GR% vs. LY(Nurtec) 	当前月份实际销量对比去年同期月份实际销量的增长率	月度销量同比增速=(当前月份的实际销量/去年同期月份的实际销量-1)*100%	Achievement	In-Market	计算指标			元（RMB)	0.01		Nurtec产品：volume需要统一折算为2tab/盒	当前月份的实际销售数量	去年同期月份的实际销售数量	高		Nurtec				DDD	TA-Yue, Chang	2026/6/16		Active	
+00115	KPI-Achievement-00115	Y	年度销量同比增速	YTD Sales Volume GR% vs. LY 	基于同期YTD统计今年的销售量情况和去年的销售量情况比较	年度销量同比增速=(当前YTD的实际销售数量/去年同期YTD的实际销售数量-1)*100%	Achievement	In-Market	计算指标			元（RMB)	0.01			当前YTD的实际销售数量	去年同期YTD的实际销售数量	高		Cibinqo				DDD	TA-Angel	2026/6/9		Active	
+00116	KPI-Achievement-00116	Y	季度销售额同比增速	Quarterly Sales GR% vs. LY  	基于同期季度统计今年的销售情况和去年的销售情况比较	季度销售额同比增速=(今年同期季度的实际销售金额/去年同期季度的实际销售金额-1)*100%	Achievement	In-Market	计算指标			%	0.01			当前季度的实际销售金额	去年同期季度的实际销售金额	高		ZAVI,Lorbrena				DDD	TA-Minjia&Zhaolin	2026/6/25		Active	
+00117	KPI-Achievement-00117	Y	季度销售量同比增速	Quarterly Sales Volume GR% vs. LY  	基于同期季度统计今年的销售数量情况和去年的销售数量情况比较	季度销售数量同比增速=(今年同期季度的实际销售数量/去年同期季度的实际销售数量-1)*100%	Achievement	In-Market	计算指标			%	0.01			当前季度的实际销售数量	去年同期季度的实际销售数量	高		Cibinqo				DDD	TA-Angel	2026/6/9		Active	
+00118	KPI-Achievement-00118	Y	月度销售额环比增速	Monthly Sales GR% vs. AVG(L3M)	当前月实际销售金额和前3个月的实际销售平均值的占比	月度销销售额环比增速=（当前月份的实际销售金额/前3个月的实际销售平均值-1)*100%	Achievement	In-Market	计算指标			%	0.01			当前月份的实际销售金额	前3个月的实际销售平均值	高		ZAVI,Lorbrena,Cibinqo				DDD	TA-Angel	2026/6/9		Active	
+00119	KPI-Achievement-00119	Y	月度销量QoQ增速	Monthly Sales Volume QoQ GR% vs. AVG(LQ)	当前季度截至当月的实际销量月度均值对比上一季度的实际销量月度平均值的增长率	月度销量QoQ增速=（当前季度截至当月的实际销量月度平均值/上一季度的实际销量月度平均值-1)*100%	Achievement	In-Market	计算指标			%	0.01		Nurtec产品：volume需要统一折算为2tab/盒	当前月份的实际销售数量	前3个月的实际销售数量平均值	高		Nurtec				DDD	TA-Yue, Chang	2026/6/16		Active	
+00120	KPI-Achievement-00120	N	月度COE医院销量QoQ增速	Monthly COEs Volume QoQ GR% vs. AVG(LQ)	当前季度截至当月的COE医院实际销量月度均值对比上一季度的COE医院实际销量月度平均值的增长率	月度COE医院销量QoQ增速=（当前季度截至当月的COE医院实际销量月度平均值/上一季度COE医院的实际销量月度平均值-1)*100%	Achievement	In-Market	计算指标			%	0.01			当前月份COE医院的实际销售金额	前3个月COE医院的实际销售平均值	高		Nurtec				DDD	TA-Yue, Chang	2026/6/16		Active	
+00121	KPI-Achievement-00121	N	月度QC医院销量QoQ增速	Monthly QC Volume QoQ GR% vs. AVG(LQ)	当前季度截至当月的QC医院实际销量月度均值对比上一季度的QC医院实际销量月度平均值的增长率	月度QC医院销量QoQ增速=（当前季度截至当月的QC医院实际销量月度平均值/上一季度QC医院的实际销量月度平均值-1)*100%	Achievement	In-Market	计算指标			%	0.01			当前月份QC医院的实际销售金额	前3个月QC医院的实际销售平均值	高		Nurtec				DDD	TA-Yue, Chang	2026/6/16		Active	
+00122	KPI-Achievement-00122	Y	季度平均销售额环比增速	Quarterly AVG Sales GR% vs. LQ 	当前季度平均实际销售金额和上个季度的平均实际销售金额的占比	季度平均销售额环比增速=（当前季度平均实际销售金额/上个季度的平均实际销售-1)*100%	Achievement	In-Market	计算指标			%	0.01			当前季度的平均实际销售金额	上个季度的平均实际销售	高		ZAVI,Cibinqo				DDD	TA-Angel	2026/6/9		Active	
+00123	KPI-Achievement-00123	Y	医院渠道的销售数量	HCO Sales Volume	统计医院渠道的销售数量	对医院渠道的销售数量求和	Achievement	In-Market	基础指标			个数	1												TA-Bryan	2026/6/25		Active	
+00124	KPI-Achievement-00124	Y	医院渠道的销售金额	HCO Sales Amount	统计医院渠道的销售金额	对医院渠道的销售金额求和	Achievement	In-Market	基础指标			元（RMB)	0.01												TA-Bryan	2026/6/25		Active	
+00125	KPI-Achievement-00125	Y	DTP药房贡献率	DTP contr% in All	DTP药房的销量和所有销量的占比	DTP药房贡献率=DTP药房的销量/所有销量*100%	Achievement	In-Market	计算指标			%	0.01			DTP药房的销量	所有销量	高		Lorbrena,Cibinqo				DDD	TA-Angel	2026/6/9		Active	需要知道DTP药房标签
+00126	KPI-Achievement-00126	Y	DTP占院外药店的贡献率	DTP contr% in exhosp	DTP的销量和所有院外药店销量的占比	DTP贡献率=DTP的销量/所有院外药店的销量*100%	Achievement	In-Market	计算指标			%	0.01			DTP的销量	所有院外药店的销量	高		Lorbrena,Cibinqo				DDD	TA-Angel	2026/6/9		Active	需要知道院外药房的标签
+00127	KPI-Achievement-00127	Y	医院渠道贡献率	Hospital Channel contr%	医院渠道的销量和所有销量的占比	医院渠道贡献率=医院渠道的销量/所有销量*100%	Achievement	In-Market	计算指标			%	0.01			医院渠道的销量	所有销量	高		Cibinqo				DDD	TA-Angel	2026/6/9		Active	
+00128	KPI-Achievement-00128	Y	最后5天销售金额	Last 5 working days sales Amount	每个月最后5天（工作日，需要排除周末和节假日）的销售金额	对每个月最后5天的销售金额进行求和	Achievement	In-Market	基础指标			元（RMB)	0.01												TA-Bryan	2026/6/25		Active	
+00129	KPI-Achievement-00129	Y	最后5天销售贡献率	Last 5 working days sales%	每个月最后5天（工作日，需要排除周末和节假日）的销售和当月的总销售的占比	最后5天销售贡献率=每个月最后5天的销售/当月的总销售*100%	Achievement	In-Market	计算指标			%	0.01			每个月最后5天的销售	当月的总销售	高		Lorbrena,Cibinqo,Nurtec				DDD	TA-Angel	2026/6/9		Active	
+00130	KPI-Achievement-00130	Y	前3个月的销售金额	Last Rolling 3M Sales Amount	统计前3个月（不包含本月）的销售金额	对前3个月（不包含本月）的销售金额进行求和	Achievement	In-Market	基础指标			元（RMB)	0.01												TA-Bryan	2026/6/25		Active	
+00131	KPI-Achievement-00131	Y	前3个月的销售数量	Last Rolling 3M Sales Volume	统计前3个月（不包含本月）的销售数量	对前3个月（不包含本月）的销售数量进行求和	Achievement	In-Market	基础指标			个数	1												TA-Bryan	2026/6/25		Active	
+00132	KPI-Achievement-00132	Y	前3个月的销售指标	Last Rolling 3M Sales Target	统计前3个月（不包含本月）的销售指标	对前3个月（不包含本月）的销售指标进行求和	Achievement	In-Market	基础指标			元（RMB)	0.01												TA-Bryan	2026/6/25		Active	
+00133	KPI-Achievement-00133	Y	药房渠道的销售数量	Pharmacy Sales Volume	统计药房渠道的销售数量	对药房渠道的销售数量求和	Achievement	In-Market	基础指标			个数	1												TA-Bryan	2026/6/25		Active	
+00134	KPI-Achievement-00134	Y	药房渠道的销售金额	Pharmacy Sales Amount	统计药房渠道的销售金额	对药房渠道的销售金额求和	Achievement	In-Market	基础指标			元（RMB)	0.01												TA-Bryan	2026/6/25		Active	
+00135	KPI-Achievement-00135	Y	DTP渠道的销售数量	DTP Sales Volume	统计DTP渠道的销售数量	对DTP渠道的销售数量求和	Achievement	In-Market	基础指标			个数	1												TA-Bryan	2026/6/25		Active	
+00136	KPI-Achievement-00136	Y	DTP渠道的销售金额	DTP Sales Amount	统计DTP渠道的销售金额	对DTP渠道的销售金额求和	Achievement	In-Market	基础指标			元（RMB)	0.01												TA-Bryan	2026/6/25		Active	
+00137	KPI-Achievement-00137	Y	季度销售金额	QTD Sales Amount	统计当季度的销售金额	对当季度的销售金额进行求和	Achievement	In-Market	基础指标			元（RMB)	0.01												TA-Bryan	2026/6/25		Active	
+00138	KPI-Achievement-00138	Y	季度销售数量	QTD Sales Volume	统计当季度的销售数量	对当季度的销售数量进行求和	Achievement	In-Market	基础指标			个数	1												TA-Bryan	2026/6/25		Active	
+00139	KPI-Achievement-00139	Y	季度平均销售数量	QTD AVG Sales Volume	统计当季度平均的销售数量	季度平均销售数量=当季度的销售数量总和/月份数	Achievement	In-Market	计算指标			个数	1												TA-Bryan	2026/6/25		Active	
+00140	KPI-Achievement-00140	N	院外渠道（DTP+药店） 销售金额	Out-Of-HCO Sales Amount	统计院外渠道（DTP+药店） 的销售金额	对院外渠道（DTP+药店） 的销售金额进行求和	Achievement	In-Market	基础指标			元（RMB)	0.01												TA-Bryan	2026/6/25		Active	
+00141	KPI-Achievement-00141	Y	YTD人均生产力	YTD AVG Productivity	统计团队人均的销售额	YTD人均生产力=YTD销售金额/MICS岗位数*100%	Achievement	In-Market	基础指标			元（RMB)	0.01												TA-Bryan	2026/6/25		Active	
+00142	KPI-Achievement-00142	Y	实际销售数量	Actual Sales Volume	统计实际的销售数量	从不同的维度对销售数量累计求和	Achievement	In-Market	基础指标			个数	1												TA-Bryan	2026/6/25		Active	
+00143	KPI-Achievement-00143	Y	当前3个月的销售金额	Current 3M Sales Amount	统计当前3个月的销售金额	对当前3个月（包含本月）的销售金额进行求和	Achievement	In-Market	基础指标			元（RMB)	0.01												TA-Bryan	2026/6/25		Active	
+00144	KPI-Achievement-00144	Y	当前3个月的销售数量	Current 3M Sales Volume	统计当前3个月的销售数量	对当前3个月（包含本月）的销售数量进行求和	Achievement	In-Market	基础指标			个数	1												TA-Bryan	2026/6/25		Active	
+00145	KPI-Achievement-00145	Y	前1个月的销售金额	Last Month Sales Amount	统计前1个月的销售金额	对前1个月的销售金额进行求和	Achievement	In-Market	基础指标			元（RMB)	0.01												TA-Bryan	2026/6/25		Active	
+00146	KPI-Achievement-00146	Y	前1个月的销售数量	Last Month Sales Volume	统计前1个月的销售数量	对前1个月的销售数量进行求和	Achievement	In-Market	基础指标			个数	1												TA-Bryan	2026/6/25		Active	
+00147	KPI-Achievement-00147	Y	去年同期的销售金额	Last Year Sales Amount	统计去年同期的销售金额	对去年同期的销售金额进行求和	Achievement	In-Market	基础指标			元（RMB)	0.01												TA-Bryan	2026/6/25		Active	
+00148	KPI-Achievement-00148	Y	去年同期的销售数量	Last Year Sales Volume	统计去年同期的销售数量	对去年同期的销售数量进行求和	Achievement	In-Market	基础指标			个数	1												TA-Bryan	2026/6/25		Active	
+00149	KPI-Achievement-00149	Y	去年同期的销售指标	Last Year Sales Target	统计去年同期的销售指标	对去年同期的销售指标进行求和	Achievement	In-Market	基础指标			元（RMB)	0.01												TA-Bryan	2026/6/25		Active	
+00150	KPI-Achievement-00150	Y	季度销售目标	QTD Sales Target	统计当季度的销售目标	对当季度的销售目标进行求和	Achievement	In-Market	基础指标			元（RMB)	0.01												TA-Bryan	2026/6/25		Active	
+00151	KPI-Achievement-00151	Y	去年同期季度的销售金额	QTD Last Year  Sales Amount	统计去年同期季度的销售金额	对去年同期季度的销售金额进行求和	Achievement	In-Market	基础指标			元（RMB)	0.01												TA-Bryan	2026/6/25		Active	
+00152	KPI-Achievement-00152	Y	去年同期季度的销售数量	QTD Last Year Sales Volume	统计去年同期季度的销售数量	对去年同期季度的销售数量进行求和	Achievement	In-Market	基础指标			个数	1												TA-Bryan	2026/6/25		Active	
+00153	KPI-Achievement-00153	Y	上个季度销售金额	Last Quarter Sales Amount	统计上个季度的销售金额	对上个季度的销售金额进行求和	Achievement	In-Market	基础指标			元（RMB)	0.01												TA-Bryan	2026/6/25		Active	
+00154	KPI-Achievement-00154	Y	上个季度销售数量	Last Quarter Sales Volume	统计上个季度的销售数量	对上个季度的销售数量进行求和	Achievement	In-Market	基础指标			个数	1												TA-Bryan	2026/6/25		Active	
+00155	KPI-Achievement-00155	Y	销售指标	Sales Target	统计销售目标	对销售目标进行求和	Achievement	In-Market	基础指标			元（RMB)	0.01												TA-Bryan	2026/6/25		Active	
+00156	KPI-Achievement-00156	Y	YTD达成	YTD A/T%	统计YTD的销售达成	YTD达成=YTD销售金额/YTD销售指标*100%	Achievement	In-Market	计算指标			%	0.01												TA-Bryan	2026/6/25		Active	
+00157	KPI-Achievement-00157	Y	YTD销售金额同比	YTD GR%	统计YTD销售金额与去年同期比较	YTD销售金额同比=（售金额/去年同期YTD销售金额-1）*100%	Achievement	In-Market	计算指标			%	0.01												TA-Bryan	2026/6/25		Active	
+00158	KPI-Achievement-00158	Y	YTD销售数量同比	YTD Vol GR%	统计YTD销售数量与去年同期比较	YTD销售数量同比=（YTD销售数量/去年同期YTD销售数量-1）*100%	Achievement	In-Market	计算指标			%	0.01												TA-Bryan	2026/6/25		Active	
+00159	KPI-Achievement-00159	Y	YTD销售金额	YTD Amount	统计YTD的销售金额	对YTD的销售金额进行求和	Achievement	In-Market	基础指标			元（RMB)	0.01												TA-Bryan	2026/6/25		Active	
+00160	KPI-Achievement-00160	Y	YTD去年同期销售金额	YTD Amount LY	统计去年同期YTD的销售金额	对去年同期YTD的销售金额进行求和	Achievement	In-Market	基础指标			元（RMB)	0.01												TA-Bryan	2026/6/25		Active	
+00161	KPI-Achievement-00161	Y	YTD去年同期销售数量	YTD Volume  LY	统计去年同期YTD的销售数量	对去年同期YTD的销售数量进行求和	Achievement	In-Market	基础指标			个数	1												TA-Bryan	2026/6/25		Active	
+00162	KPI-Achievement-00162	Y	YTD销售数量	YTD_Volume	统计YTD销售数量	对YTD销售数量进行求和	Achievement	In-Market	基础指标			个数	1												TA-Bryan	2026/6/25		Active	
+00163	KPI-Achievement-00163	Y	YTD销售指标	YTD_Target	统计YTD销售指标	对YTD销售指标进行求和	Achievement	In-Market	基础指标			元（RMB)	0.01												TA-Bryan	2026/6/25		Active	
+00164	KPI-Achievement-00164	Y	200毫克销售贡献率	200mg contri%	基于同期内200毫克的销售额和Cibinqo的总销售额的占比	200毫克销售贡献率=200毫克的销售额/Cibinqo的总销售额*100%	Achievement	In-Market	计算指标			%	0.01			200毫克的销售额	Cibinqo的总销售额	高		Cibinqo				DDD	TA-Angel	2026/6/9		Active	
+00165	KPI-Achievement-00165	Y	MTD销售量	MTD Sales Volume	MTD的销售数量	对MTD的销售数量进行加总	Achievement	In-Market	基础指标			%	0.01			销售数量	销售天数	高		Cibinqo				DDD	TA-Angel	2026/6/9		Active	
+00166	KPI-Achievement-00166	Y	季度月均销售额	QTD Average Sales	基于季度统计销售额和销售季度数的占比	季度月均销售额=QTD销售额/QTD销售季度数*100%	Achievement	In-Market	计算指标			%	0.01			QTD销售额	QTD销售季度数	高		Cibinqo				DDD	TA-Angel	2026/6/9		Active	
+00167	KPI-Achievement-00167	Y	季度月均销售量	QTD Average Sales Volume	基于季度统计销售数量和销售季度数的占比	季度月均销售量=QTD销售数量/QTD销售季度数*100%	Achievement	In-Market	计算指标			%	0.01			QTD销售数量	QTD销售季度数	高		Cibinqo				DDD	TA-Angel	2026/6/9		Active	
+00168	KPI-Achievement-00168	Y	DM销量和平均生产力的占比	DM Sales vs.  Avg Productivity%	DM的销量和整体DM平均生产力的对比	DM销量和平均生产力的占比=某个DM 销量/（所有DM销量/DM个数）*100%	Achievement	In-Market	计算指标			%	0.01			某个DM 销量	所有DM销量/DM个数	中		Cibinqo				DDD	TA-Angel	2026/6/9		Active	
+00169	KPI-Achievement-00169	N	销售额EV值变化	Sales Value EV vs. LY	产品销售额的同比增长和市场销售额的同比增长的占比	销售额EV值变化=100*(产品的销售额/市场整体的销售额)/(去年同期产品的销售额/ 市场去年同期销售额)	Achievement	Marketing	计算指标			份额	1			100*(产品的销售额/市场整体的销售额)	去年同期产品的销售额/ 市场去年同期销售额	高		ZAVI				DDD	TA-Minjia&Zhaolin	2026/6/25		Active	
+00170	KPI-Achievement-00170	N	销售数量EV值变化	Sales Volume EV vs. LY	产品销售数量的同比增长和市场销售数量的同比增长的占比	销售数量EV值变化=100*(产品的销售数量/市场整体的销售数量)/(去年同期产品的销售数量/ 市场去年同期销售数量)	Achievement	Marketing	计算指标			份额	1			100*(产品的销售数量/市场整体的销售数量)	去年同期产品的销售数量/ 市场去年同期销售数量	高		ZAVI				DDD	TA-Minjia&Zhaolin	2026/6/25		Active	
+00171	KPI-Achievement-00171	N	ABCD类医院销售额EV值变化	Sales Value EV vs. LY in Different Segment HCO 	ABCD类医院的产品销售额的同比增长和市场销售额的同比增长的占比	ABCD类医院的销售额EV值变化=100*(ABCD类医院的产品的销售额/ABCD类医院的市场整体的销售额)/(ABCD类医院的去年同期产品的销售额/ ABCD类医院的市场去年同期销售额)	Achievement	Marketing	计算指标			份额	1			100*(ABCD类医院的产品的销售额/ABCD类医院的市场整体的销售额)	ABCD类医院的去年同期产品的销售额/ ABCD类医院的市场去年同期销售额	高		ZAVI				DDD	TA-Minjia&Zhaolin	2026/6/25		Active	需要ABCD类医院的标签
+00172	KPI-Achievement-00172	N	ABCD类医院销售额占同类分子式市场的比例	MS% in Mol in Different Segment HCO 	ABCD类医院的产品销售额和同类分子式的市场销售额的占比	ABCD类医院销售额占同类分子式市场的比例=ABCD类医院的产品销售额/同类分子式的市场销售额*100%	Achievement	Marketing	计算指标			%	0.01			ABCD类医院的产品销售额	同类分子式的市场销售额	高		ZAVI				DDD	TA-Minjia&Zhaolin	2026/6/25		Active	
+00173	KPI-Achievement-00173	N	ABCD类医院在ZAVI和EMB的销售额占市场的比例	Zavi&Emb MS% in Different Segment HCO 	ABCD类医院在ZAVI和EMB2个产品上面的销售额和市场销售额的占比	ABCD类医院在ZAVI和EMB的销售额占市场的比例=ABCD类医院在ZAVI和EMB2个产品上面的销售额/市场销售额*100%	Achievement	Marketing	计算指标			%	0.01			ABCD类医院在ZAVI和EMB2个产品上面的销售额	市场销售额	高		ZAVI				DDD	TA-Minjia&Zhaolin	2026/6/25		Active	
+00174	KPI-Achievement-00174	N	ABCD类医院的销售额占市场的比例	MS% in Different Segment HCO 	ABCD类医院在某个产品的销售额和市场销售额的占比	ABCD类医院在某个产品的销售额占市场的比例=ABCD类医院在某个产品上面的销售额/市场销售额*100%	Achievement	Marketing	计算指标			%	0.01			ABCD类医院在某个产品上面的销售额	市场销售额	高		ZAVI				DDD	TA-Minjia&Zhaolin	2026/6/25		Active	
+00175	KPI-Achievement-00175	N	患者治疗天数	PDOT	统计患者治疗月份数	患者治疗天数=销售量（UN) * 规格（pcksize_desc） * 系数（new ratio） / 转换数量（conversion volume）	Achievement	Marketing	计算指标			月数	0.01												TA-Bryan	2026/6/25		Active	
+00176	KPI-Achievement-00176	N	CRKP药敏同步完成率	CRKP Complete Rate%	目标医院中已建立CRKP药敏同步机制医院数和目标医院数的占比	CRKP药敏同步完成率=目标医院中已建立CRKP药敏同步机制医院数/目标医院数*100%	Achievement	Customer	计算指标			%	0.01			目标医院中已建立CRKP药敏同步机制医院数	目标医院数	中		ZAVI				DDD	TA-Minjia&Zhaolin	2026/6/25		Active	需要提供已建立CRKP药敏同步机制的医院列表
+00177	KPI-Achievement-00177	N	CRPA药敏同步完成率	CRPA Complete Rate%	目标医院中已建立CRPA药敏同步机制医院数和目标医院数的占比	CRPA药敏同步完成率=目标医院中已建立CRPA药敏同步机制医院数/目标医院数*100%	Achievement	Customer	计算指标			%	0.01			目标医院中已建立CRPA药敏同步机制医院数	目标医院数	中		ZAVI				DDD	TA-Minjia&Zhaolin	2026/6/25		Active	需要提供已建立CRPA药敏同步机制的医院列表
+00178	KPI-Achievement-00178	N	一线新病人占比	1L NPS%	在1线 ALK&NSCLC新处方的患者中，使用洛拉替尼的数量和患者总数的占比	一线新病人占比=在1线 ALK&NSCLC新处方的患者中使用洛拉替尼的患者数量/在1线 ALK&NSCLC新处方的患者总数*100%	Achievement	Customer	计算指标			%	0.01			在1线 ALK&NSCLC新处方的患者中使用洛拉替尼的患者数量	在1线 ALK&NSCLC新处方的患者总数	中		Lorbrena				DDD	TA-Bryan	2026/6/25		Active	
+00179	KPI-Achievement-00179	N	二线新病人占比	2L NPS%	在二线 ALK&NSCLC新处方的患者中，使用洛拉替尼的数量和患者总数的占比	二线新病人占比=在2线 ALK&NSCLC新处方的患者中使用洛拉替尼的患者数量/在2线 ALK&NSCLC新处方的患者总数*100%	Achievement	Customer	计算指标			%	0.01			在2线 ALK&NSCLC新处方的患者中使用洛拉替尼的患者数量	在2线 ALK&NSCLC新处方的患者总数	中		Lorbrena				DDD	TA-Bryan	2026/6/25		Active	
+00180	KPI-Achievement-00180	N	一线脑转病人占比	1L NPS BM%	在1线 ALK&NSCLC新处方的脑转患者中，使用洛拉替尼的数量和患者总数的占比	一线脑转病人占比=在1线 ALK&NSCLC新处方的脑转患者中使用洛拉替尼的患者数量/在1线 ALK&NSCLC新处方的脑转患者总数*100%	Achievement	Customer	计算指标			%	0.01			在1线 ALK&NSCLC新处方的脑转患者中使用洛拉替尼的患者数量	在1线 ALK&NSCLC新处方的患者总数	中		Lorbrena				DDD	TA-Bryan	2026/6/25		Active	
+00181	KPI-Achievement-00181	N	一线非脑转病人占比	1L NPS NBM%	在一线 ALK&NSCLC新处方的非脑转患者中，使用洛拉替尼的数量和患者总数的占比	一线非脑转病人占比=在1线 ALK&NSCLC新处方的非脑转患者中使用洛拉替尼的患者数量/在1线 ALK&NSCLC新处方的非脑转患者总数*100%	Achievement	Customer	计算指标			%	0.01			在2线 ALK&NSCLC新处方的非脑转患者中使用洛拉替尼的患者数量	在2线 ALK&NSCLC新处方的患者总数	中		Lorbrena				DDD	TA-Bryan	2026/6/25		Active	
+00182	KPI-Achievement-00182	Y	已列名医院数量	Listed HCO#	统计已准入医院数量	对已准入医院进行计数	Achievement	Customer	基础指标			个数	1			N/A	N/A	中		ZAVI,Nurtec				DDD	TA-Yue, Chang	2026/6/16		Active	
+00183	KPI-Achievement-00183	Y	T40已列名医院占比	T40 listed HCO vs. Target%	T40已准入医院占T40总目标医院的比例	T40已列名医院占比=T40已列名医院的个数/T40医院总数*100%	Achievement	Customer	计算指标			%	0.01			T40已列名医院的个数	T40医院总数	中		Cibinqo				DDD	TA-Angel	2026/6/9		Active	需要提供T40医院的标签
+00184	KPI-Achievement-00184	Y	T40~80已列名医院占比	T40~80 listed HCO vs. Target%	T40~80已准入医院占T40~80总目标医院的比例	T40~80已列名医院占比=T40~80已列名医院的个数/T40~80医院总数*100%	Achievement	Customer	计算指标			%	0.01			T40~80已列名医院的个数	T40~80医院总数	中		Cibinqo				DDD	TA-Angel	2026/6/9		Active	需要提供T40~80医院的标签
+00185	KPI-Achievement-00185	Y	T80~100已列名医院占比	T80~100 listed HCO vs. Target%	T80~100已准入医院占T80~100总目标医院的比例	T80~100已列名医院占比=T80~100已列名医院的个数/T80~100医院总数*100%	Achievement	Customer	计算指标			%	0.01			T80~100已列名医院的个数	T80~100医院总数	中		Cibinqo				DDD	TA-Angel	2026/6/9		Active	需要提供T80~100医院的标签
+00186	KPI-Achievement-00186	Y	T100已列名医院占比	T100 listed HCO vs. Target%	T100已准入医院占T100总目标医院的比例	T100已列名医院占比=T100已列名医院的个数/T100医院总数*100%	Achievement	Customer	计算指标			%	0.01			T100已列名医院的个数	T100医院总数	中		Cibinqo				DDD	TA-Angel	2026/6/9		Active	需要提供T100医院的标签
+00187	KPI-Achievement-00187	Y	T40已列名医院个数	T40 listed HCO#	统计已列名的T40医院的个数	对已列名的T40医院的进行计数	Achievement	Customer	基础指标			个数	1												CFC-Phoebe	2026/6/16		Active	
+00188	KPI-Achievement-00188	Y	T40未列名医院个数	T40 Not listed HCO#	统计未列名的T40医院的个数	对未列名的T40医院进行计数	Achievement	Customer	基础指标			个数	1												CFC-Phoebe	2026/6/16		Active	
+00189	KPI-Achievement-00189	Y	T40目标医院个数	T40 Target  HCO#	统计T40目标医院的个数	对T40目标医院进行计数	Achievement	Customer	基础指标			个数	1												TA-Bryan	2026/6/25		Active	
+00190	KPI-Achievement-00190	Y	T80已列名医院个数	T80 listed HCO#	统计已列名的T80医院的个数	对已列名的T80医院的进行计数	Achievement	Customer	基础指标			个数	1												CFC-Phoebe	2026/6/16		Active	
+00191	KPI-Achievement-00191	Y	T80未列名医院个数	T80 Not listed HCO#	统计未列名的T80医院的个数	对未列名的T80医院进行计数	Achievement	Customer	基础指标			个数	1												CFC-Phoebe	2026/6/16		Active	
+00192	KPI-Achievement-00192	Y	T80目标医院个数	T80 Target  HCO#	统计T80目标医院的个数	对T80目标医院进行计数	Achievement	Customer	基础指标			个数	1												TA-Bryan	2026/6/25		Active	
+00193	KPI-Achievement-00193	Y	T80~100已列名医院个数	T80~100 listed HCO#	统计已列名的T80~100医院的个数	对已列名的T80~100医院的进行计数	Achievement	Customer	基础指标			个数	1												CFC-Phoebe	2026/6/16		Active	
+00194	KPI-Achievement-00194	Y	T80~100未列名医院个数	T80~100 Not listed HCO#	统计未列名的T80~100医院的个数	对未列名的T80~100医院进行计数	Achievement	Customer	基础指标			个数	1												CFC-Phoebe	2026/6/16		Active	
+00195	KPI-Achievement-00195	Y	T80~100目标医院个数	T80~100 Target  HCO#	统计T80~100目标医院的个数	对T80~100目标医院进行计数	Achievement	Customer	基础指标			个数	1												TA-Bryan	2026/6/25		Active	
+00196	KPI-Achievement-00196	Y	T100已列名医院个数	T100 listed HCO#	统计已列名的T100医院的个数	对已列名的T100医院的进行计数	Achievement	Customer	基础指标			个数	1												CFC-Phoebe	2026/6/16		Active	
+00197	KPI-Achievement-00197	Y	T100未列名医院个数	T100 Not listed HCO#	统计未列名的T100医院的个数	对未列名的T100医院进行计数	Achievement	Customer	基础指标			个数	1												CFC-Phoebe	2026/6/16		Active	
+00198	KPI-Achievement-00198	Y	T100目标列名医院个数	T100 Target listed HCO#	统计T100目标列名医院的个数	对T100目标医院进行计数	Achievement	Customer	基础指标			个数	1												TA-Bryan	2026/6/25		Active	
+00199	KPI-Achievement-00199	Y	目标医院个数	Target HCO#	统计目标医院的个数	对目标医院进行计数	Achievement	Customer	基础指标			个数	1												TA-Bryan	2026/6/25		Active	
+00200	KPI-Achievement-00200	Y	临时列名医院个数	Temp Listing#	统计列名状态是“临时采购”的医院个数	对列名状态是“临时采购”的医院进行计数	Achievement	Customer	基础指标			个数	1												CFC-Phoebe	2026/6/16		Active	
+00201	KPI-Achievement-00201	Y	T40~100已列名的潜力	T40~100 Listed HCO Potential	统计T40~100已列名的医院潜力	对T40~100已列名的医院潜力进行求和	Achievement	Customer	基础指标			分数	0.01												CFC-Phoebe	2026/6/16		Active	
+00202	KPI-Achievement-00202	Y	T40~100的潜力	T40~100 HCO Potential	统计T40~100的医院潜力	对T40~100的医院潜力进行求和	Achievement	Customer	基础指标			分数	0.01												TA-Bryan	2026/6/25		Active	
+00203	KPI-Achievement-00203	Y	已列名的潜力值占比	Listed Potential%	已列名医院的潜力值和所有医院潜力值的占比	已列名的潜力值占比=已列名的潜力值加总/所有医院潜力值的加总*100%	Achievement	Customer	计算指标			%	0.01			已列名的潜力值加总	所有医院潜力值的加总	中		Lorbrena				DDD	CFC-Phoebe	2026/6/16		Active	
+00204	KPI-Achievement-00204	N	医院就诊人次的潜力值	Potential Patient#	统计医院的就诊人次的潜力值	对医院的就诊人次的潜力值进行求和	Achievement	Customer	基础指标			次数	1												TA-Bryan	2026/6/25		Active	
+00205	KPI-Achievement-00205	N	有销量的COE医院个数	# of COEs with sales>0	统计所有有销量的COE医院个数	对有销量的COE医院进行去重计数	Achievement	Customer	基础指标			个数	1			N/A	N/A	中		Nurtec				DDD	TA-Yue, Chang	2026/6/16		Active	需要提供COE医院标签
+00206	KPI-Achievement-00206	N	COE医院个数	# of COEs	统计所有COE医院个数	对COE医院进行去重计数	Achievement	Customer	基础指标			个数	1			N/A	N/A	中		Nurtec				DDD	TA-Yue, Chang	2026/6/16		Active	
+00207	KPI-Achievement-00207	N	有销量的QC医院个数	# of QCs with sales>0	统计所有有销量的QC医院个数	对有销量的QC医院进行去重计数	Achievement	Customer	基础指标			个数	1			N/A	N/A	中		Nurtec				DDD	TA-Yue, Chang	2026/6/16		Active	需要提供QC医院标签
+00208	KPI-Achievement-00208	N	QC医院个数	# of QCs	统计所有QC医院个数	对QC医院进行去重计数	Achievement	Customer	基础指标			个数	1			N/A	N/A	中		Nurtec				DDD	TA-Yue, Chang	2026/6/16		Active	
+00209	KPI-Achievement-00209	N	重点医院安全运营率	HCO Safety operation%	监控重点医院基于一个基准月在后续月的时间内依然持续保持“科学管控”状态的个数占总数的比例	重点医院安全运营率=基准月是“科学管控”的医院持续到当前每个月的状态均是“科学管控”的个数/基准月里面状态是“科学管控”的医院个数	Achievement	Customer	计算指标			%	0.01			上月底是重点医院在本月底状态依然是“科学管控”的个数	重点医院在上月底状态是“科学管控”的个数	中		ZAVI				DDD	TA-Minjia&Zhaolin	2026/6/25		Active	
+00210	KPI-Achievement-00210	N	重点医院列名保留率	HCO Keep Listing% 	监控重点医院相比基准月依然保持“正式准入”或“常备临采”状态的个数占总数的比例	重点医院列名保留率=基准月是“正式准入”或“常备临采”，在本月状态依然是“正式准入”或“常备临采”的个数/在基准月状态是“正式准入”或“常备临采”的医院个数	Achievement	Customer	计算指标			%	0.01			上月底是重点医院在本月底状态依然是“正式准入”的个数	重点医院在上月底状态是“正式准入”的个数	中		ZAVI				DDD	TA-Minjia&Zhaolin	2026/6/25		Active	
+00211	KPI-Achievement-00211	N	倡导医生的个数	# Advocator	统计大区在某个月份医生是倡导类型的个数	对倡导类型的医生进行计数	Achievement	Customer	基础指标			个数	1			N/A	N/A	中		Nurtec				DDD	TA-Yue, Chang	2026/6/16		Active	
+00212	KPI-Achievement-00212	N	代言医生的个数	# Ambassador	统计大区在某个月份医生是代言类型的个数	对代言类型的医生进行计数	Achievement	Customer	基础指标			个数	1			N/A	N/A	中		Nurtec				DDD	TA-Yue, Chang	2026/6/16		Active	
+00213	KPI-Achievement-00213	N	重复医生的个数	# Repeat user	统计大区在某个月份医生是重复类型的个数	对重复类型的医生进行计数	Achievement	Customer	基础指标			个数	1			N/A	N/A	中		Nurtec				DDD	TA-Yue, Chang	2026/6/16		Active	
+00214	KPI-Achievement-00214	N	尝试医生的个数	# Tryer	统计大区在某个月份医生是尝试类型的个数	对尝试类型的医生进行计数	Achievement	Customer	基础指标			个数	1			N/A	N/A	中		Nurtec				DDD	TA-Yue, Chang	2026/6/16		Active	
+00215	KPI-Achievement-00215	N	倡导&代言&重复&尝试医生个数的环比差值	Adoption Development	统计倡导&代言&重复&尝试本月的医生总数和上个月的总数差值	倡导&代言&重复&尝试医生个数的环比差值=倡导&代言&重复&尝试本月的医生总数-倡导&代言&重复&尝试上个月的医生总数	Achievement	Customer	计算指标			个数	1			N/A	N/A	中		Nurtec				DDD	TA-Yue, Chang	2026/6/16		Active	
+00216	KPI-Capability-00216	N	业务计划能力分数	BP Score	RM对销售团队DM在Business Planning能力上面的打分	N/A	Capability	Training	基础指标			分数	0.1			N/A	N/A	低		Lorbrena, Cibinqo, Nurtec,Zavi				DDD	TA-Angel	2026/6/9		Active	
+00217	KPI-Capability-00217	Y	Coach天数	Coaching days	在对医生拜访的时候DM对MICS Coach的天数	N/A	Capability	Training	基础指标			分数	0.1			N/A	N/A	低		Lorbrena Cibinqo, Nurtec				DDD	TA-Angel	2026/6/9		Active	
+00218	KPI-Capability-00218	N	Coach质量评分	Coaching Quality Score	DM的coaching quality score是RM对该DM的打分，RM是DM分数的平均分	N/A	Capability	Training	基础指标			分数	0.1			N/A	N/A	低		Lorbrena Cibinqo, Nurtec,Zavi				DDD	TA-Angel	2026/6/9		Active	
+00219	KPI-Capability-00219	N	地区经理能力得分	DM Capabilites Score	销售团队DM综合能力的权重分	N/A	Capability	Training	基础指标			分数	0.1			N/A	N/A	低		Lorbrena				DDD	TA-Bryan	2026/6/25		Active	
+00220	KPI-Capability-00220	N	医生融动得分	HCP engagement Score	思境应用中对MICS的打分	N/A	Capability	Training	基础指标			分数	0.1			N/A	N/A	低		Lorbrena				DDD	TA-Bryan	2026/6/25		Active	
+00221	KPI-Capability-00221	N	角色扮演得分	Objection Handling Score	在角色扮演中对DM和MICS的打分	N/A	Capability	Training	基础指标			分数	0.1			N/A	N/A	低		Lorbrena Cibinqo, Nurtec,Zavi				DDD	TA-Angel	2026/6/9		Active	
+00222	KPI-Capability-00222	N	PIM会议技能得分	PIM Skills Score	对DM和MICS在PIM会议中能力的打分	N/A	Capability	Training	基础指标			分数	0.1			N/A	N/A	低		Lorbrena, Nurtec,Zavi				DDD	TA-Yue, Chang	2026/6/16		Active	
+00223	KPI-Capability-00223	N	疾病治疗领域知识得分	TA Knowledge Score	对DM和MICS在疾病治疗领域知识的打分	N/A	Capability	Training	基础指标			分数	0.1			N/A	N/A	低		Lorbrena Cibinqo, Nurtec,Zavi				DDD	TA-Angel	2026/6/9		Active	
+00224	KPI-Capability-00224	N	团队平均能力得分	Team Avg Capabilities Score	MICS平均能力的权重分	N/A	Capability	Training	基础指标			分数	0.1			N/A	N/A	低		Lorbrena				DDD	TA-Bryan	2026/6/25		Active	
+00225	KPI-Engagement-00225	Y	准入数量	Hospital Listing#	"统计准入状态为“正式准入”的医院数量（包括部分产品的【常备临采】*和【外配目录】*）
+【常备临采】视同【正式准入】产品名单：
+HBU：Cresemba,Zavicefta, Xacduro, Emblaveo; 
+MBU：Nurtec; 
+ORBU：Elrexfio,Hympavzi
+【外配目录】视同为0.5【正式准入】产品名单：
+HBU：Cresemba, Emblaveo, Xacduro
+ORBU：Lobrena, Inlyta, Elrexfio,Besponsa,Hympavzi
+I&IBU：Cibinqo,Litfulo
+CVMBU:Xianweiying,Xianyida"	对正式准入的医院进行计数（按照Strength进行统计，正式准入、常备临采计1，外配目录计0.5）	Engagement	准入	基础指标			个数	1			N/A	N/A	中						Smart	CFC-Phoebe	2026/6/16		Active	
+00226	KPI-Engagement-00226	Y	准入池	Hospital Listing Pool#	统计“进院目标池”的医院数量	对“进院目标池”的医院进行计数	Engagement	准入	基础指标			个数	1			N/A	N/A	中						Smart	CFC-Phoebe	2026/6/16		Active	
+00227	KPI-Engagement-00227	Y	实际转化率	Hospital Conversion%	统计已准入的医院数量和“进院目标池”的医院数量的比例	实际转化率=准入数量/准入池*100%	Engagement	准入	计算指标			%	0.01			准入数量	准入池	中						Smart	CFC-Phoebe	2026/6/16		Active	
+00228	KPI-Engagement-00228	Y	累计准入数量	Accumulative Hospital Listing#	历史累计至今的准入状态为正式准入的医院数量（包括部分产品的【常备临采】*和【外配目录】*）	对准入的医院进行累计计数	Engagement	准入	基础指标			个数	1			N/A	N/A	中						Smart	CFC-Phoebe	2026/6/16		Active	
+00229	KPI-Engagement-00229	Y	准入医院分级占比	Hospital listing Tag%	"按照准入医院标签维度统计列名医院的个数和总列名个数的比例，
+考核标准：
+Core BU：Critical： High potential：Medium Potential=15%：35%：50%
+GE：High potential：Medium Potential=40%：60%"	准入医院分级占比=各个准入医院标签列名医院的个数/列名医院总数	Engagement	准入	计算指标			%	0.01												CFC-Phoebe	2026/6/16		Active	
+00230	KPI-Engagement-00230	Y	准入3 个月以上无销量医院个数	Listed  > 3 months w/o Sales Hospital	统计准入状态为“正式准入”且准入时间超过3个月没有销量的医院个数	对准入且超过3个月无销量的医院进行累计计数	Engagement	准入	基础指标			个数	1			N/A	N/A	中						Smart	CFC-Phoebe	2026/6/16		Active	
+00231	KPI-Engagement-00231	Y	准入3 个月内无销量医院个数	Listed  ≤ 3 months w/o Sales Hospital	统计准入状态为“正式准入”且准入时间小于等于3个月没有销量的医院个数	对准入且3个月内无销量的医院进行累计计数	Engagement	准入	基础指标			个数	1			N/A	N/A	中						Smart	CFC-Phoebe	2026/6/16		Active	
+00232	KPI-Engagement-00232	Y	准入有销量医院个数	Listed w/ Sales Hospital	统计准入状态为“正式准入”且有销量的医院个数	对准入且有销量的医院进行累计计数	Engagement	准入	基础指标			个数	1			N/A	N/A	中						Smart	CFC-Phoebe	2026/6/16		Active	
+00233	KPI-Engagement-00233	Y	采购次数	Purchase Number of Times	统计客户（医院，药房）的采购次数	对客户（医院，药房）的采购次数进行计数	Engagement	准入	基础指标			次数	1		同一个客户同一个产品在同一天多次采购只算一次	N/A	N/A	中						Smart	CFC-Phoebe	2026/6/16		Inactive	
+00234	KPI-Engagement-00234	Y	采购数量	Purchase Amount	统计客户（医院，药房）的采购金额	对客户（医院，药房）的采购金额进行求和	Engagement	准入	基础指标			元（RMB)	0.01			N/A	N/A	中						Smart	CFC-Phoebe	2026/6/16		Inactive	
+00235	KPI-Engagement-00235	Y	退货次数	Return Number of Times	统计客户（医院，药房）的退货次数	对客户（医院，药房）的退货次数进行计数	Engagement	准入	基础指标			次数	1		同一个客户同一个产品在同一天多次退货只算一次	N/A	N/A	中						Smart	CFC-Phoebe	2026/6/16		Inactive	
+00236	KPI-Engagement-00236	Y	退货数量	Return Amount	统计客户（医院，药房）的退货金额	对客户（医院，药房）的退货金额进行求和	Engagement	准入	基础指标			元（RMB)	0.01			N/A	N/A	中						Smart	CFC-Phoebe	2026/6/16		Inactive	
+00237	KPI-Engagement-00237	Y	进货次数	Stock Up Number of Times	统计客户（医院，药房）的进货次数	对客户（医院，药房）的进货次数进行计数	Engagement	准入	基础指标			次数	1		同一个客户同一个产品在同一天多次进货只算一次	N/A	N/A	中						Smart	CFC-Phoebe	2026/6/16		Inactive	
+00238	KPI-Engagement-00238	Y	进货数量	Stock Up Amount	统计客户（医院，药房）的进货金额	对客户（医院，药房）的进货金额进行求和	Engagement	准入	基础指标			元（RMB)	0.01			N/A	N/A	中							CFC-Phoebe	2026/6/16		Inactive	
+00239	KPI-Engagement-00239	Y	未准入数量	HCO Not Access#	统计未准入的医院数量	对未准入的医院进行计数	Engagement	准入	基础指标			个数	1			N/A	N/A	中							CFC-Phoebe	2026/6/16		Active	
+00240	KPI-Engagement-00240	Y	准入目标数量	Hospital Target#	"统计准入目标医院个数
+(H1展示的上半年的准入目标医院数，H2展示全年的准入目标医院数）"	对准入目标医院进行计数	Engagement	准入	基础指标			个数	1			N/A	N/A	中							CFC-Phoebe	2026/6/16		Active	
+00241	KPI-Engagement-00241	Y	准入达成进展	Listing Progress%	准入状态为“正式准入”的医院数量占准入目标数的比例	准入进展=准入数量/准入目标数*100%	Engagement	准入	计算指标			%	0.01			准入数量	准入目标数	中							CFC-Phoebe	2026/6/16		Active	
+00242	KPI-Engagement-00242	Y	HA准入数量	HA Hospital Listing#	统计归属团队为HA且准入状态为“正式准入”的医院数量（包括部分产品的【常备临采】*和【外配目录】*）	对归属团队为HA且正式准入的医院进行计数（按照Strength进行统计，正式准入、常备临采计1，外配目录计0.5）	Engagement	准入	基础指标			个数	0.1			N/A	N/A	中							CFC-Phoebe	2026/6/16		Active	
+00243	KPI-Engagement-00243	Y	HA准入目标数量	HA Hospital Target#	HA的准入目标医院数（H1展示的上半年的准入目标医院数，H2展示全年的准入目标医院数）	对归属为HA团队的准入目标医院进行计数	Engagement	准入	基础指标			个数	1			N/A	N/A	中							CFC-Phoebe	2026/6/16		Active	
+00244	KPI-Engagement-00244	Y	HA准入达成进展	HA Listing Progress%	归属团队为HA的准入状态为“正式准入”的医院数量占准入目标数的比例	HA准入进展=HA准入数量/HA准入目标数*100%	Engagement	准入	计算指标			%	0.01			HA准入数量	HA准入目标数	中							CFC-Phoebe	2026/6/16		Active	
+00245	KPI-Engagement-00245	Y	CRS准入数量	CRS Hospital Listing#	统计归属团队为CRS且准入状态为“正式准入”的医院数量（包括部分产品的【常备临采】*和【外配目录】*）	对归属团队为CRS且正式准入的医院进行计数（按照Strength进行统计，正式准入、常备临采计1，外配目录计0.5）	Engagement	准入	基础指标			个数	0.1			N/A	N/A	中							CFC-Phoebe	2026/6/16		Active	
+00246	KPI-Engagement-00246	Y	CRS准入目标数量	CRS Hospital Target#	CRS的准入目标医院数（H1展示的上半年的准入目标医院数，H2展示全年的准入目标医院数）	对归属为CRS团队的准入目标医院进行计数	Engagement	准入	基础指标			个数	1			N/A	N/A	中							CFC-Phoebe	2026/6/16		Active	
+00247	KPI-Engagement-00247	Y	CRS准入达成进展	CRS Listing Progress%	归属团队为CRS的准入状态为“正式准入”的医院数量占准入目标数的比例	CRS准入进展=CRS准入数量/CRS准入目标数*100%	Engagement	准入	计算指标			%	0.01			CRS准入数量	CRS准入目标数	中							CFC-Phoebe	2026/6/16		Active	
+00248	KPI-Engagement-00248	Y	GE准入数量	GE Hospital Listing#	统计归属团队为GE且准入状态为“正式准入”的医院数量（包括部分产品的【常备临采】*和【外配目录】*）	对归属团队为GE且正式准入的医院进行计数（按照Strength进行统计，正式准入、常备临采计1，外配目录计0.5）	Engagement	准入	基础指标			个数	0.1			N/A	N/A	中							CFC-Phoebe	2026/6/16		Active	
+00249	KPI-Engagement-00249	Y	GE准入目标数量	GE Hospital Target#	归属团队为GE的准入目标医院数（H1展示的上半年的准入目标医院数，H2展示全年的准入目标医院数）	对归属为GE团队的准入目标医院进行计数	Engagement	准入	基础指标			个数	1			N/A	N/A	中							CFC-Phoebe	2026/6/16		Active	
+00250	KPI-Engagement-00250	Y	GE准入达成进展	GE Listing Progress%	归属团队为GE的准入状态为“正式准入”的医院数量占准入目标数的比例	GE准入进展=GE准入数量/GE准入目标数*100%	Engagement	准入	计算指标			%	0.01			GE准入数量	GE准入目标数	中							CFC-Phoebe	2026/6/16		Active	
+00251	KPI-Finance-00251	Y	审批费用金额	Expense Approved AMT	统计报销费用的金额	对已审批的报销金额进行求和	Finance	Expense	基础指标			RMB	0.01			N/A	N/A	中											
+00252	KPI-Finance-00252	Y	会议总预估金额	Meeting Total Esti AMT	统计会议的总预估金额	对会议的预估金额进行求和	Finance	Expense	基础指标			RMB	0.01			N/A	N/A	中											
+																													
+																													
+																													
+																													
+																													
+																													
+																													
+																													
+																													
+																													
+																													
+																													
+																													
+																													
+																													
+																													
+																													
+																													
+																													
+																													
+																													
+																													
+																													
+																													
+																													
+																													
+																													
+																													
+																													
+																													
+																													
+																													
+																													
+																													
+																													
+																													
+																													
+																													
+																													
+																													
+																													
+																													
+																													
+																													
+																													
+																													
+																													
+																													
+																													
+																													
+																													
+																													
+																													
+																													
+																													
+																													
+																													
+																													
